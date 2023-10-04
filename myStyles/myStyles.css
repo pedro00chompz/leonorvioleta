@@ -30,6 +30,36 @@
     color: #EF4136;
 }
 
+/*** Grid System ***/
+
+/* Mobile Grid: 6 columns, 20px margin, 20px gutter */
+@media (max-width: 767px) {
+    .mobile-grid .row {
+        margin: 0 -10px; /* 20px margin */
+    }
+    .mobile-grid .col {
+        padding: 0 10px; /* 20px gutter */
+    }
+    .mobile-grid .col {
+        flex: 0 0 16.66667%; /* 6 columns */
+        max-width: 16.66667%; /* 6 columns */
+    }
+}
+
+/* Desktop Grid: 12 columns, 30px margin, 30px gutter */
+@media (min-width: 768px) {
+    .desktop-grid .row {
+        margin: 0 -15px; /* 30px margin */
+    }
+    .desktop-grid .col {
+        padding: 0 15px; /* 30px gutter */
+    }
+    .desktop-grid .col {
+        flex: 0 0 8.33333%; /* 12 columns */
+        max-width: 8.33333%; /* 12 columns */
+    }
+}
+
 /*** Body ***/
 
 body {
