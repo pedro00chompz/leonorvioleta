@@ -30,6 +30,10 @@
     color: #EF4136;
 }
 
+.bkWhite {
+    background-color: #FFFFFF;
+}
+
 /*** Grid System ***/
 
 /* Mobile Grid: 6 columns, 20px margin, 20px gutter */
@@ -64,5 +68,32 @@
 
 body {
      font-family: Helvetica, Arial, sans-serif;
-     font-size: 16px;
+    font-size: 16px;
  }
+
+.navbarMobileBrand {
+    border-bottom: 1px solid black;
+}
+
+.brandNaming {
+    padding: 1.25rem 0rem 1.25rem 1.25rem;
+}
+
+.navbarMobileOptions {
+    display: flex;
+    width: 24.375rem;
+    padding: 0rem 1.25rem;
+    align-items: flex-start;
+    gap: 2.625rem;
+    border-bottom: 1px solid black;
+}
+
+.mobileLink {
+    display: flex;
+    padding: 1.25rem 0rem;
+    align-items: center;
+    gap: 0.625rem;
+}
+
+/*** Index ***/
+
