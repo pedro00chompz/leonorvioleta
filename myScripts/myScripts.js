@@ -1,4 +1,20 @@
 window.onload = function () {
+
+  // Navbar
+
+  $(document).ready(function() {
+    // When the "WORK" link is clicked
+    $("#workLink").click(function() {
+      // Toggle the display of the sub-divs
+      $(".subDivs").toggle();
+    });
+  });
+
+
+
+
+  //
+
   function initializeSVGAnimation() {
     const svgObject = document.getElementById("animated-svg");
 

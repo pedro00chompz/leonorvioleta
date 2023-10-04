@@ -26,6 +26,10 @@
     color: #E474AB;
 }
 
+.bkPink {
+    background-color: #E474AB;
+}
+
 .violetaRed {
     color: #EF4136;
 }
@@ -40,6 +44,8 @@
 body {
      font-family: Helvetica, Arial, sans-serif;
     font-size: 16px;
+    font-weight: 400;
+
  }
 
 .navbarMobileBrand {
@@ -48,7 +54,7 @@ body {
     padding: 1.25rem 0rem 1.25rem 1.25rem;
     align-items: center;
     gap: 0.625rem;
-    border-bottom: 1px solid var(--violeta-black, #101010);
+    border-bottom: 1px solid black;
 }
 
 .navbarMobileOptions {
@@ -57,7 +63,7 @@ body {
     padding: 0rem 1.25rem;
     align-items: flex-start;
     gap: 2.625rem;
-    border-bottom: 1px solid var(--violeta-black, #101010);
+    border-bottom: 1px solid black;
 }
 
 .mobileLinksContainer {
@@ -71,6 +77,35 @@ body {
     justify-content: center;
     align-items: center;
     gap: 0.625rem;
+}
+
+.linkWork {
+    display: flex;
+    width: 24.375rem;
+    padding: 1.25rem 0rem 1.25rem 1.25rem;
+    align-items: center;
+    gap: 0.625rem;
+    border-bottom: 1px solid black;
+    background: #E474AB;
+}
+
+.subDivs {
+    display: none; /* Start with the subDivs hidden */
+    transition: opacity 0.3s ease-in-out, top 0.3s ease-in-out; /* Apply transitions for opacity and position */
+}
+
+.subDivs.visible {
+    display: block; /* Show the subDivs when the 'visible' class is applied */
+    opacity: 1; /* Fully opaque when visible */
+}
+
+.linksDesktopSubMenu {
+    font-family: Helvetica;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-decoration: none;
 }
 
 
