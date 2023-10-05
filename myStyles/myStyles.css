@@ -30,6 +30,10 @@
     background-color: #E474AB;
 }
 
+.bkGreen {
+    background-color: #3BC68A;
+}
+
 .violetaRed {
     color: #EF4136;
 }
@@ -87,6 +91,26 @@ body {
     gap: 0.625rem;
     border-bottom: 1px solid black;
     background: #E474AB;
+}
+
+.linkGallery {
+    display: flex;
+    width: 24.375rem;
+    padding: 1.25rem 0rem 1.25rem 1.25rem;
+    align-items: center;
+    gap: 0.625rem;
+    border-bottom: 1px solid black;
+    background: #3BC68A;
+}
+
+.linkShop {
+    display: flex;
+    width: 24.375rem;
+    padding: 1.25rem 0rem 1.25rem 1.25rem;
+    align-items: center;
+    gap: 0.625rem;
+    border-bottom: 1px solid black;
+    background: #EF4136;
 }
 
 .subDivs {

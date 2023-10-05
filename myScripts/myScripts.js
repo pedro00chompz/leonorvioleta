@@ -10,6 +10,22 @@ window.onload = function () {
     });
   });
 
+  $(document).ready(function() {
+    // When the "WORK" link is clicked
+    $("#galleryLink").click(function() {
+      // Toggle the display of the sub-divs
+      $(".subDivsGallery").toggle();
+    });
+  });
+
+  $(document).ready(function() {
+    // When the "WORK" link is clicked
+    $("#shopLink").click(function() {
+      // Toggle the display of the sub-divs
+      $(".subDivsShop").toggle();
+    });
+  });
+
 
 
 
