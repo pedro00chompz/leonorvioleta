@@ -1,48 +1,41 @@
 window.onload = function () {
+  // Navbar
 
-    // Navbar
+  $(document).ready(function () {
+    // When a link is clicked
+    $("div[data-target]").click(function () {
+      let target = $(this).data("target");
 
-    $(document).ready(function () {
-        // When a link is clicked
-        $("div[data-target]").click(function () {
-            let target = $(this).data("target");
-
-            // Check if the subdivisions are visible
-            if ($("." + target).is(":visible")) {
-                // If visible, hide them
-                $("." + target).hide();
-            } else {
-                // If hidden, show them
-                // Hide all other subdivisions
-                $(".subDivs").not("." + target).hide();
-                // Show the selected subdivisions
-                $("." + target).show();
-            }
-        });
+      // Check if the subdivisions are visible
+      if ($("." + target).is(":visible")) {
+        // If visible, hide them
+        $("." + target).hide();
+      } else {
+        // If hidden, show them
+        // Hide all other subdivisions
+        $(".subDivs")
+          .not("." + target)
+          .hide();
+        // Show the selected subdivisions
+        $("." + target).show();
+      }
     });
+  });
 
-    //
+  // Index Flower Desktop Animation
+  const flowerPath = document.querySelector("#indexFlowerDesktop path");
 
-    function initializeSVGAnimation() {
-        const svgObject = document.getElementById("animated-svg");
+  // Define the starting and ending paths
+  const startPath = "M100,100"; // Replace with your starting path
+  const endPath = "M100,100 L50,50 L150,150"; // Replace with your ending path
 
-        if (svgObject) {
-            const svgDoc = svgObject.contentDocument;
-
-            if (svgDoc) {
-                const pathElement = svgDoc.getElementById("path-id");
-
-                anime({
-                    targets: pathElement,
-                    stroke: "#FF0000",
-                    duration: 4000,
-                    easing: "easeOutExpo",
-                });
-            }
-        }
-    }
-
-    document
-        .getElementById("animated-svg")
-        .addEventListener("load", initializeSVGAnimation);
+  anime({
+    targets: flowerPath,
+    d: [
+      { value: startPath },
+      { value: endPath, duration: 2000 }, // Adjust the duration as needed
+    ],
+    easing: "linear",
+    autoplay: true,
+  });
 };
