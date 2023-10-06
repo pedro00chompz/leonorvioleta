@@ -21,21 +21,33 @@ window.onload = function () {
       }
     });
   });
-
-  // Index Flower Desktop Animation
-  const flowerPath = document.querySelector("#indexFlowerDesktop path");
-
-  // Define the starting and ending paths
-  const startPath = "M100,100"; // Replace with your starting path
-  const endPath = "M100,100 L50,50 L150,150"; // Replace with your ending path
-
-  anime({
-    targets: flowerPath,
-    d: [
-      { value: startPath },
-      { value: endPath, duration: 2000 }, // Adjust the duration as needed
-    ],
-    easing: "linear",
-    autoplay: true,
-  });
 };
+
+// Flower Desktop Animation
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Function to animate an SVG path
+  function animateSVGPath(selector) {
+    const flowerPath = document.querySelector(selector);
+
+    anime.set(flowerPath, {
+      strokeDashoffset: anime.setDashoffset(flowerPath),
+      strokeDasharray: anime.setDashoffset(flowerPath),
+    });
+
+    const timeline = anime.timeline({
+      easing: "easeInOutQuad",
+      duration: 1500,
+      autoplay: true,
+    });
+
+    timeline.add({
+      targets: flowerPath,
+      strokeDashoffset: [anime.setDashoffset(flowerPath), 0],
+      duration: 5500,
+    });
+  }
+
+  animateSVGPath(".flowerPathOuter");
+  animateSVGPath(".flowerPathCenter");
+});
