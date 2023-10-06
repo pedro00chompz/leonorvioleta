@@ -135,3 +135,12 @@ body {
 
 /*** Index ***/
 
+/* Flower Desktop Animation */
+
+.flowerPathOuter,
+.flowerPathCenter {
+  fill: none;
+  stroke: #1d1d1b;
+  stroke-miterlimit: 10;
+  stroke-width: 11px;
+}
