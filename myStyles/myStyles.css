@@ -151,20 +151,20 @@ body {
     gap: 0.625rem;
 }
 
-.footerLinkDecoration{
+.footerLinkDecoration {
     text-decoration: none;
     color: black;
 }
 
-.footerOtherLinks{
+.footerOtherLinks {
     display: flex;
+    justify-content: space-between; /* Adjust this property */
     align-items: flex-start;
-    gap: 8.625rem;
+    padding: 0.75rem 1.25rem 1.25rem 1.25rem;
 }
 
-.otherLinks{
+.otherLinks {
     display: flex;
-    padding: 0.75rem 1.25rem 1.25rem 1.25rem;
     justify-content: center;
     align-items: center;
     gap: 0.625rem;
