@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
     timeline.add({
       targets: flowerPath,
       strokeDashoffset: [anime.setDashoffset(flowerPath), 0],
-      duration: 5500,
+      duration: 9000,
     });
   }
 
