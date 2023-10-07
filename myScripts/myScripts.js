@@ -51,3 +51,9 @@ document.addEventListener("DOMContentLoaded", function () {
   animateSVGPath(".flowerPathOuter");
   animateSVGPath(".flowerPathCenter");
 });
+
+
+// Gallery
+
+//Gallery Mobile
+
