@@ -52,6 +52,8 @@ body {
 
  }
 
+/**** Navbar ****/
+
 .navbarMobileBrand {
     display: flex;
     width: 100%; /* Set width to 100% to occupy the full screen width */
@@ -132,6 +134,10 @@ body {
     text-decoration: none;
 }
 
+.linksNavBar {
+    text-decoration: none;
+    color: #51B9CD;
+}
 /*** Footer ***/
 
 /*** Index differs a bit ***/
