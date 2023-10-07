@@ -258,15 +258,21 @@ body {
     border-bottom: 1px solid black;
 }
 
+.otherWorks {
+    text-align: left;
+    margin-top: 20px;
+}
 .otherWorksLink {
     display: flex;
-    justify-content: center;
+    justify-content: start;
     align-items: start;
+    gap: 10px;
     color: black;
+    text-align: left;
 
 }
 
-
+    /*** Desktop ***/
 
 
 
