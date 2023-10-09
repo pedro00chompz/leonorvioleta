@@ -50,7 +50,6 @@ body {
     font-size: 16px;
     font-weight: 400;
     color: black;
-
  }
 
 /**** Navbar ****/
@@ -92,7 +91,7 @@ body {
 
 .linkWork {
     display: flex;
-    width: 24.375rem;
+    width: 100%;
     padding: 1.25rem 0rem 1.25rem 1.25rem;
     align-items: center;
     gap: 0.625rem;
@@ -102,7 +101,7 @@ body {
 
 .linkGallery {
     display: flex;
-    width: 24.375rem;
+    width: 100%;
     padding: 1.25rem 0rem 1.25rem 1.25rem;
     align-items: center;
     gap: 0.625rem;
@@ -112,7 +111,7 @@ body {
 
 .linkShop {
     display: flex;
-    width: 24.375rem;
+    width: 100%;
     padding: 1.25rem 0rem 1.25rem 1.25rem;
     align-items: center;
     gap: 0.625rem;
@@ -211,6 +210,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    overflow: hidden;
 }
 
 .mobileGalleryRow {
@@ -268,11 +268,11 @@ body {
 
 .contactSection {
     display: flex;
-    width: 390px;
     padding-bottom: 20px;
     border-bottom: 1px solid black;
     flex-direction: column;
     align-items: flex-start;
+    overflow: hidden;
 }
 
 .contactTitle {
@@ -310,11 +310,18 @@ body {
 
 .bioSection {
     display: flex;
-    width: 390px;
     padding: 20px 20px;
     flex-direction: column;
     align-items: flex-start;
     border-bottom: 1px solid black;
+    overflow: hidden;
+}
+
+.bioText {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
 }
 
 .otherWorks {
