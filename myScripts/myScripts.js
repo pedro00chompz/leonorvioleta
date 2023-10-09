@@ -21,6 +21,29 @@ window.onload = function () {
       }
     });
   });
+
+  $(document).ready(function () {
+    $("div[data-target]").click(function () {
+      let target = $(this).data("target");
+
+      $("." + target).toggleClass("visible");
+
+      // Hide all other subdivisions
+      $(".subDivs")
+        .not("." + target)
+        .removeClass("visible");
+
+      // Get the position of the parent container (navbar)
+      const parentContainer = $(this).closest(".navbarMobileOptions");
+      const parentOffset = parentContainer.offset();
+
+      // Adjust the position of the dropdown menu
+      $("." + target).css({
+        top: parentOffset.top + parentContainer.outerHeight(),
+        left: parentOffset.left,
+      });
+    });
+  });
 };
 
 // Flower Desktop Animation
@@ -52,8 +75,6 @@ document.addEventListener("DOMContentLoaded", function () {
   animateSVGPath(".flowerPathCenter");
 });
 
-
 // Gallery
 
 //Gallery Mobile
-

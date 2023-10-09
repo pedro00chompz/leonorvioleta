@@ -120,9 +120,14 @@ body {
 }
 
 .subDivs {
+    position: absolute;
+    width: 100%;
     display: none; /* Start with the subDivs hidden */
-    transition: opacity 0.3s ease-in-out, top 0.3s ease-in-out; /* Apply transitions for opacity and position */
+    opacity: 0; /* Make it initially transparent */
+    z-index: 1000;
 }
+
+
 
 .subDivs.visible {
     display: block; /* Show the subDivs when the 'visible' class is applied */
