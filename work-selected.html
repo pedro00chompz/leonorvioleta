@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leonor Violeta</title>
+
+    <meta name="description" content="TBE">
+    <meta name="author" content="Rolino, Gonçalo Soares, Chompz">
+
+    <!-- Favicon (replace with your own favicon.ico) -->
+    <link rel="icon" href="./favicon/favicon.ico" sizes="any"/>
+    <link rel="icon" href="./favicon/favicon.svg" type="image/svg+xml"/>
+    <link rel="apple-touch-icon" href="./favicon/apple-touch-icon.png"/>
+    <meta name="theme-color" content="#4a4a4a"/>
+
+    <!-- Link to Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <!-- Link to my styles -->
+    <link rel="stylesheet" href="./myStyles/myStyles.css">
+</head>
+<body>
+
+<div class="d-block d-md-none">
+    <div class="navbarMobileBrand">
+        <div><a href="index.html" class="linksDesktopSubMenu violetaBlack">LEONOR VIOLETA</a></div>
+    </div>
+    <div class="navbarMobileOptions">
+        <div class="d-flex mobileLinksContainer justify-content-between">
+            <div class="mobileLink" id="workLink" data-target="subDivsWork">WORK</div>
+            <div class="mobileLink" id="galleryLink" data-target="subDivsGallery">GALLERY</div>
+            <div class="mobileLink"><a href="about.html" class="linksNavBar">ABOUT</a></div>
+            <div class="mobileLink" id="shopLink" data-target="subDivsShop">SHOP</div>
+        </div>
+    </div>
+    <!-- WORK SUBMENU -->
+    <div class="subDivs subDivsWork" style="display: none;">
+        <div class="linkWork"><a href="#" class="linksDesktopSubMenu violetaBlack">SELECTED</a></div>
+        <div class="linkWork"><a href="#" class="linksDesktopSubMenu violetaBlack">COLLABS</a></div>
+        <div class="linkWork"><a href="#" class="linksDesktopSubMenu violetaBlack">MURAL</a></div>
+        <div class="linkWork"><a href="#" class="linksDesktopSubMenu violetaBlack">EDITORIAL</a></div>
+        <div class="linkWork"><a href="#" class="linksDesktopSubMenu violetaBlack">ART</a></div>
+    </div>
+
+    <!-- GALLERY SUBMENU -->
+    <div class="subDivs subDivsGallery" style="display: none;">
+        <div class="linkGallery"><a href="gallery-illustration.html" class="linksDesktopSubMenu violetaBlack">ILLUSTRATION</a>
+        </div>
+        <div class="linkGallery"><a href="gallery-daily.html" class="linksDesktopSubMenu violetaBlack">DAILY</a></div>
+        <div class="linkGallery"><a href="gallery-love.html" class="linksDesktopSubMenu violetaBlack">LOVE</a></div>
+    </div>
+
+    <!-- SHOP SUBMENU -->
+    <div class="subDivs subDivsShop" style="display: none;">
+        <div class="linkShop"><a href="#" class="linksDesktopSubMenu violetaBlack">PRINT</a></div>
+        <div class="linkShop"><a href="#" class="linksDesktopSubMenu violetaBlack">CANVAS</a></div>
+        <div class="linkShop"><a href="#" class="linksDesktopSubMenu violetaBlack">COLLABS</a></div>
+        <div class="linkShop"><a href="#" class="linksDesktopSubMenu violetaBlack">ALL</a></div>
+    </div>
+</div>
+
+<!-- MOBILE -->
+<div>
+    <div class="workFrame">
+        <h6 class="titleWork">AGENDA PARALELO</h6>
+        <p class="descriptionWork">AGORA PORTO</p>
+        <p class="descriptionWork">TEATRO MUNICIPAL DO PORTO</p>
+        <p class="descriptionWork">2020</p>
+        <button class="plusButtonWork">
+            <svg
+                    xmlns="http://www.w3.org/2000/svg" width="14"
+                    height="14"
+                    viewBox="0
+            0 14 14"
+                    fill="none">
+                <path d="M14 8H8V14H6V8H0V6H6V0H8V6H14V8Z" fill="#101010"/>
+            </svg>
+        </button>
+        <div class="hiddenInfoWork">
+            <p class="hiddenInfoWorkText">For IPO Coimbra (Portuguese Institute of Oncology), Balance is the union
+                between
+                happiness and
+                serenity.
+                Values that are transmitted by a dynamic scenario of harmonious colors, created with elements alluding
+                to
+                nature, the place that often makes us reach fullness. An abstract landscape, a mix of sensations and
+                directions that seek balance, as required by those who pass by: find a balance, a comfort, a new look at
+                the
+                landscape.</p>
+        </div>
+        <img class="selectedWorkImg" src="./myImgs/work/selected/agendaParalelo.jpg">
+    </div>
+    <div class="divWorkBottomBorder"></div>
+</div>
+
+
+<div id="footerMobile d-block d-md-none">
+    <div class="footerMobileMail"><a href="mailto:aleonorvioleta@gmail.com" class="footerLinkDecoration">ALEONORVIOLETA@GMAIL.COM</a>
+    </div>
+    <div class="footerOtherLinks">
+        <div class="otherLinks">
+            <a href="https://www.behance.net/leonorvioleta" target="_blank" class="footerLinkDecoration">BEHANCE</a>
+        </div>
+        <div class="otherLinks">
+            <a href="https://www.instagram.com/leonorvioleta/" target="_blank"
+               class="footerLinkDecoration">INSTAGRAM</a>
+        </div>
+    </div>
+</div>
+<!-- Bootstrap JavaScript (Popper.js and jQuery are required for Bootstrap) -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+<script src="myScripts/myScripts.js"></script>
+
+
+</body>
+</html>

@@ -347,3 +347,56 @@ body {
 
 
 
+/*** Work ***/
+
+
+    /*** Mobile ***/
+
+.workFrame {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+.titleWork {
+    display: flex;
+    gap: 10px;
+    margin: 0 0 20px 0;
+}
+
+.descriptionWork {
+    display: flex;
+    margin: 0;
+}
+
+.plusButtonWork {
+    display: flex;
+    margin: 20px 0 0 0;
+    padding: 0;
+    border: none;
+    background: none;
+    cursor:pointer;
+}
+
+.hiddenInfoWork {
+    margin: 20px 0 0 0;
+    display: none;
+    font-size: 14px;
+}
+
+.hiddenInfoWorkText {
+    margin: 0;
+}
+
+.selectedWorkImg {
+    height: 100%;
+    max-width: 100%;
+    display: block;
+    margin: 20px auto 0 auto;
+}
+
+.divWorkBottomBorder {
+    border-bottom: 1px solid #101010;
+    width: 100%;
+}
