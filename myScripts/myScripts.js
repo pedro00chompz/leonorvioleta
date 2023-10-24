@@ -84,8 +84,30 @@ document.addEventListener("DOMContentLoaded", function () {
 //Work Mobile
 
 $(document).ready(function () {
+    let isHidden = true; // Initially hidden
     $(".plusButtonWork").click(function () {
         let hiddenInfoWork = $(this).nextAll(".hiddenInfoWork:first");
+
+        // Reset the rotation to 0 degrees
+        anime({
+            targets: this,
+            rotate: '0deg',
+            duration: 1000,
+        });
+
+        // Toggle the hidden state and rotation based on 'isHidden'
+        if (isHidden) {
+            // Rotate 45 degrees clockwise
+            anime({
+                targets: this,
+                rotate: '45deg',
+                duration: 1000,
+            });
+        } else {
+
+        }
+
+        isHidden = !isHidden; // Toggle the hidden state
 
         hiddenInfoWork.toggle();
 
@@ -93,13 +115,10 @@ $(document).ready(function () {
         if ($(this).find('path').attr('fill') === "#101010") {
             // Change the SVG to the second one
             $(this).find('path').attr('fill', '#E474AB');
-            $(this).find('path').attr('d', 'M10.1421 11.5563L5.89941 7.31371L1.65677 11.5563L0.24256 10.1421L4.4852 5.89949L0.24256 1.65685L1.65677 0.242641L5.89941 4.48528L10.1421 0.242641L11.5563 1.65685L7.31363 5.89949L11.5563 10.1421L10.1421 11.5563Z');
         } else {
             // Change the SVG back to the first one
             $(this).find('path').attr('fill', '#101010');
-            $(this).find('path').attr('d', 'M14 8H8V14H6V8H0V6H6V0H8V6H14V8Z');
         }
-
     });
 });
 
