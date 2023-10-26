@@ -197,7 +197,21 @@ body {
 
 /*** Index ***/
 
-/* Flower Desktop Animation */
+    /*** Mobile ***/
+
+    .flowerIndexMobile {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 1.25rem 0 1.25rem;
+    }
+    
+    .flowerIndexMobile img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /*** Desktop ***/
 
 .flowerPathOuter,
 .flowerPathCenter {
@@ -408,7 +422,56 @@ body {
 
 /*** Shop ***/
 
+    /*** Mobile ***/
+
 .linksNavBarShop {
     text-decoration: none;
     color: #EF4136;
 }
+
+.shopFrame {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+.titleShop {
+    display: flex;
+    gap: 10px;
+    margin: 0 0 20px 0;
+}
+
+.descriptionShop {
+    display: flex;
+    margin: 0;
+}
+
+.linkShopNow {
+    display: flex;
+    gap: 10px;
+    margin: 30px 0 0 0;
+    text-decoration: underline;
+    color: #000;
+}
+.linkShopNow:hover {
+    color: #EF4136;
+    text-decoration: none;
+}
+
+.shopImg {
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    margin: 0 auto 20px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.divShopBottomBorder {
+    border-bottom: 1px solid #101010;
+    width: 100%;
+}
+
+    /*** Desktop ***/
