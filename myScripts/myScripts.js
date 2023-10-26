@@ -126,3 +126,8 @@ $(document).ready(function () {
 // Gallery
 
 //Gallery Mobile
+
+
+// Shop
+
+//Shop Mobile

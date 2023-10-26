@@ -400,3 +400,15 @@ body {
     border-bottom: 1px solid #101010;
     width: 100%;
 }
+
+.linksNavBarWork {
+    text-decoration: none;
+    color: #E474AB;
+}
+
+/*** Shop ***/
+
+.linksNavBarShop {
+    text-decoration: none;
+    color: #EF4136;
+}
