@@ -60,7 +60,7 @@ export default function IllustrationGallery() {
 
     //change body colour to black on mount and get window width
     useEffect(() => {
-        document.body.style.backgroundColor = "var(--violeta-green)";
+        document.body.style.backgroundColor = "var(--violeta-black)";
 
         const handleResize = () => {
             setWindowWidth(window.innerWidth);
