@@ -21,12 +21,22 @@ export default function NavBarSmallScreen(props) {
     return (
         <>
         <div className="fixed-top overflow-x-hidden">
+
             <div
                 className="text-uppercase text-start"
                 style={{
                     padding: "1rem",
-                    borderBottom: "0.08rem solid black",
-                    backgroundColor: "white",
+                    borderBottom: "0.08rem solid var(--violeta-white, #fff",
+                    backgroundColor: "var(--violeta-black, #101010)",
+                    color: "var(--violeta-white, #fff",
+                    ...(activeGallery
+                        ? {}
+                        : {
+                            padding: "1rem",
+                            borderBottom: "0.08rem solid var(--violeta-black, #101010)",
+                            backgroundColor: "var(--violeta-white, #fff",
+                            color: "var(--violeta-black, #101010)",
+                        }),
                 }}
                 onClick={()=>{
                     handleComponentChange("Home")
@@ -44,9 +54,18 @@ export default function NavBarSmallScreen(props) {
             <div
                 className="text-uppercase row justify-content-between overflow-x-hidden"
                 style={{
-                    borderBottom: "0.08rem solid black",
-                    backgroundColor: "white",
-                    padding:"1rem",
+                    padding: "1rem",
+                    borderBottom: "0.08rem solid white",
+                    backgroundColor: "black",
+                    color: "white",
+                    ...(activeGallery
+                        ? {}
+                        : {
+                            padding: "1rem",
+                            borderBottom: "0.08rem solid black",
+                            backgroundColor: "white",
+                            color: "black",
+                        }),
                 }}
             >
                 <div

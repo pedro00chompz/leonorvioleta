@@ -1,6 +1,7 @@
-import {useState} from "react";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import "../myStyles/myStyles.css"
+//Index.js
+import { useState } from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "../myStyles/myStyles.css";
 
 // importar caminhos
 
@@ -24,18 +25,24 @@ import CustomCursor from "../Components/CustomCursor";
 import FooterSmallScreens from "../Footer/FooterSmallScreens";
 import FooterLargeScreens from "../Footer/FooterLargeScreens";
 
-
-
-export default function Index(){
-
+export default function Index() {
     const [currentComponent, setCurrentComponent] = useState("Home");
-
+    const [footerColor, setFooterColor] = useState("normalColors");
 
     // Lidar com a mudança de componentes
 
     const handleComponentChange = (componentName) => {
         console.log("Changing component to:", componentName);
         setCurrentComponent(componentName);
+        if (
+            componentName === "IllustrationGallery" ||
+            componentName === "DailyGallery" ||
+            componentName === "LoveGallery"
+        ) {
+            setFooterColor("invertColors");
+        } else {
+            setFooterColor("normalColors");
+        }
     };
 
     const getCursorColor = () => {
@@ -62,61 +69,56 @@ export default function Index(){
         }
     };
 
-
-
-    return(
+    return (
         <>
-            <CustomCursor customColor={getCursorColor()}/>
+            <CustomCursor customColor={getCursorColor()} />
             {/* NavBar for Small Screens */}
 
             <div className="d-sm-block d-md-none">
-                <NavBarSmallScreen
-                    handleComponentChange={handleComponentChange}
-                />
+                <NavBarSmallScreen handleComponentChange={handleComponentChange} />
             </div>
 
             {/* NavBar for Large Screens */}
 
             <div className="d-none d-md-block">
-                <NavBarLargeScreen
-                    handleComponentChange={handleComponentChange}
-                />
+                <NavBarLargeScreen handleComponentChange={handleComponentChange} />
             </div>
-
-
 
             {/* Main Components */}
             {currentComponent === "Home" && <Home />}
 
             {/* Inside Work */}
-            {currentComponent === "SelectedWork" && <SelectedWork/>}
-            {currentComponent === "CollabsWork" && <CollabsWork/>}
-            {currentComponent === "MuralWork" && <MuralWork/>}
-            {currentComponent === "EditorialWork" && <EditorialWork/>}
-            {currentComponent === "ArtWork" && <ArtWork/>}
+            {currentComponent === "SelectedWork" && <SelectedWork />}
+            {currentComponent === "CollabsWork" && <CollabsWork />}
+            {currentComponent === "MuralWork" && <MuralWork />}
+            {currentComponent === "EditorialWork" && <EditorialWork />}
+            {currentComponent === "ArtWork" && <ArtWork />}
 
             {/* Inside Gallery */}
-            {currentComponent === "IllustrationGallery" && <IllustrationGallery/>}
-            {currentComponent === "DailyGallery" && <DailyGallery/>}
-            {currentComponent === "LoveGallery" && <LoveGallery/>}
+            {currentComponent === "IllustrationGallery" && <IllustrationGallery />}
+            {currentComponent === "DailyGallery" && <DailyGallery />}
+            {currentComponent === "LoveGallery" && <LoveGallery />}
 
             {/* About */}
-            {currentComponent === "About" && <About/>}
+            {currentComponent === "About" && <About />}
 
             {/* Inside Shop */}
-            {currentComponent === "PrintShop" && <PrintShop/>}
-            {currentComponent === "CanvasShop" && <CanvasShop/>}
-            {currentComponent === "CollabsShop" && <CollabsShop/>}
-            {currentComponent === "AllShop" && <AllShop/>}
+            {currentComponent === "PrintShop" && <PrintShop />}
+            {currentComponent === "CanvasShop" && <CanvasShop />}
+            {currentComponent === "CollabsShop" && <CollabsShop />}
+            {currentComponent === "AllShop" && <AllShop />}
 
             {/* NavBar for Small Screens */}
 
             <div className="d-sm-block d-md-none">
-                <FooterSmallScreens/>
+                <FooterSmallScreens
+                    footerColor={footerColor}
+                    isHome={currentComponent === "Home"}
+                />
             </div>
             <div className="d-none d-md-block">
-                <FooterLargeScreens/>
+                <FooterLargeScreens footerColor={footerColor} />
             </div>
         </>
-    )
+    );
 }
