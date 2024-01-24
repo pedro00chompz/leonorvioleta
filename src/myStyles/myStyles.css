@@ -2,7 +2,7 @@
 
 :root {
     --violeta-white: #fff;
-    --violeta-black: #101010;
+    --violeta-black: #000;
     --violeta-grey-400: #919191;
     --violeta-grey-200: #e6e6e6;
     --violeta-yellow: #f7ad1d;
@@ -63,7 +63,7 @@ body.hide-cursor {
 }
 
 .borderRight {
-    border-right: 1px solid var(--violeta-black, #101010);
+    border-right: 1px solid var(--violeta-black, #000);
 }
 
 @media (max-width: 767.98px) {
@@ -73,18 +73,18 @@ body.hide-cursor {
 }
 
 .horizontalLine {
-    border-bottom: 1px solid var(--violeta-black, #101010);
+    border-bottom: 1px solid var(--violeta-black, #000);
     width: 100%;
 }
 
 .printShopText {
-    color: var(--violeta-black, #101010);
+    color: var(--violeta-black, #000);
     font-size: 0.875rem;
     line-height: normal;
 }
 
 .shopNowLink {
-    color: var(--violeta-black, #101010);
+    color: var(--violeta-black, #000);
     font-size: 0.875rem;
     line-height: normal;
     text-decoration-line: underline;
