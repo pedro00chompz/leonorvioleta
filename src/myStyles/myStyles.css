@@ -1,0 +1,155 @@
+/* myStyles.css */
+
+:root {
+    --violeta-white: #fff;
+    --violeta-black: #000;
+    --violeta-grey-400: #919191;
+    --violeta-grey-200: #E6E6E6;
+    --violeta-yellow: #F7AD1D;
+    --violeta-pink: #E474AB;
+    --violeta-red: #EF4136;
+    --violeta-green: #3BC68A;
+    --violeta-blue: #51B9CD;
+}
+
+body {
+  font-family: "Helvetica", "Arial", sans-serif;
+  cursor: none;
+}
+
+body.hide-cursor {
+  cursor: none;
+}
+
+.custom-cursor {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.pinkBackground {
+  background-color: #e474ab;
+}
+
+.pinkText {
+  color: #e474ab;
+}
+
+.greenBackground {
+  background-color: #3bc68a;
+}
+
+.greenText {
+  color: #3bc68a;
+}
+
+.redBackground {
+  background-color: #ef4136;
+}
+
+.redText {
+  color: #ef4136;
+}
+
+.blueBackground {
+  background-color: #51b9cd;
+}
+
+.blueText {
+  color: #51b9cd;
+}
+
+.borderRight {
+  border-right: 1px solid var(--violeta-black, #101010);
+}
+
+@media (max-width: 767.98px) {
+    .borderRight-sm {
+        border-right: none;
+    }
+}
+
+.horizontalLine {
+  border-bottom: 1px solid black;
+  width: 100%;
+}
+
+.printShopText {
+  color: var(--violeta-black, #101010);
+  font-size: 0.875rem;
+  line-height: normal;
+}
+
+.shopNowLink {
+  color: var(--violeta-black, #101010);
+  font-size: 0.875rem;
+  line-height: normal;
+  text-decoration-line: underline;
+  display: flex;
+  padding-top: 1.25rem;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+@media (max-width: 767.98px) {
+    .printShopText, .shopNowLink {
+      font-size: 1rem;
+    }
+  }
+
+.shopNowLink:hover {
+  color: #ef4136;
+}
+
+.printInfoContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.img-fluid {
+    object-fit: contain;
+    height: 73.5vh;
+  }
+  
+  @media (max-width: 767.98px) {
+    .img-fluid {
+      height: auto;
+      width: 100%;
+    }
+  }
+
+.printShopContainer {
+  margin: 7.125rem 0 3.563rem 0;
+}
+
+.largePadding {
+  padding: 2.5rem 1.88rem 2.5rem 1.88rem;
+}
+
+@media (max-width: 767.98px) {
+  .largePadding-md {
+    padding: 1.25rem;
+  }
+  .smallPadding-md {
+    padding-bottom: 0;
+  }
+}
+
+.imageContainer {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: flex-start;
+  gap: 0.625rem;
+}
+
+#dataTitle {
+  padding-bottom: 1.25rem;
+}
+
+.printShopContainer > .row:last-child {
+    margin-bottom: 0;
+  }
