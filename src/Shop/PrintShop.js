@@ -9,34 +9,20 @@ export default function PrintShop() {
   const [productHeight, setProductHeight] = useState('auto');
 
   useEffect(() => {
-    // Fetch data from the WordPress REST API
-    setPrintDataArray([
-      {
-        title: "30×40 DIGITAL PRINTS",
-        price: "23€",
-        type: "Digital Print",
-        paper: "Paper Munken Pure 240gr",
-        size: "30×40cm",
-        image: "placeholder1.jpg",
-      },
-      {
-        title: "30×40 DIGITAL PRINTS",
-        price: "23€",
-        type: "Digital Print",
-        paper: "Paper Munken Pure 240gr",
-        size: "30×40cm",
-        image: "placeholder1.jpg",
-      },
-      {
-        title: "40×50 DIGITAL PRINTS",
-        price: "30€",
-        type: "Digital Print",
-        paper: "Paper Munken Pure 240gr",
-        size: "40×50cm",
-        image: "placeholder2.jpg",
-      }
-      // Add more objects as needed
-    ]);
+    fetch('http://localhost/wordpressVioleta/wp-json/wp/v2/product')
+      .then(response => response.json())
+      .then(data => {
+        const printDataArray = data.map(product => ({
+          title: product.acf.title,
+          price: product.acf.price,
+          type: product.acf.type,
+          paper: product.acf.paper,
+          size: product.acf.size,
+          image: product.acf && product.acf.print_image ? product.acf.print_image.url : null,
+          shop: product.acf.shop,
+        }));
+        setPrintDataArray(printDataArray);
+      });
   }, []);
   useEffect(() => {
     const calculateProductHeight = () => {

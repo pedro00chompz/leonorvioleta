@@ -1,5 +1,3 @@
-//PrintInfo.js
-
 import React from 'react';
 
 export default function PrintInfo({ printData }) {
@@ -10,7 +8,7 @@ export default function PrintInfo({ printData }) {
             <p className='mb-0'>{printData.type}</p>
             <p className='mb-0'>{printData.paper}</p>
             <p className='mb-0'>{printData.size}</p>
-            <a href="#" className="shopNowLink">SHOP NOW</a>
+            <a href={printData.shop} className='shopNowLink'>SHOP NOW</a>
         </div>
     );
 }
