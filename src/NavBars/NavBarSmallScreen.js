@@ -89,7 +89,7 @@ export default function NavBarSmallScreen(props) {
                     gallery
                 </div>
                 <div
-                    className={`col ${activeAbout ? 'blueText' : ''} p-0 text-center`}
+                    className={`col ${activeAbout ? 'blueText' : ''} p-0 text-center ps-2`}
                     onClick={()=>{
                         setShowWorkOptions(false);
                         setShowGalleryOptions(false);
