@@ -12,15 +12,17 @@ export default function PrintShop() {
     fetch('http://localhost/wordpressVioleta/wp-json/wp/v2/product')
       .then(response => response.json())
       .then(data => {
-        const printDataArray = data.map(product => ({
-          title: product.acf.title,
-          price: product.acf.price,
-          type: product.acf.type,
-          paper: product.acf.paper,
-          size: product.acf.size,
-          image: product.acf && product.acf.print_image ? product.acf.print_image.url : null,
-          shop: product.acf.shop,
-        }));
+        const printDataArray = data
+          .filter(product => product.acf.display_in_sections.includes('print'))
+          .map(product => ({
+            title: product.acf.title,
+            price: product.acf.price,
+            type: product.acf.type,
+            paper: product.acf.paper,
+            size: product.acf.size,
+            image: product.acf && product.acf.print_image ? product.acf.print_image.url : null,
+            shop: product.acf.shop,
+          }));
         setPrintDataArray(printDataArray);
       });
   }, []);

@@ -6,7 +6,7 @@ import Index from "./Index/Index";
 function App() {
   return (
     <div className="App">
-      <BrowserRouter basename="wordpress/leonorvioleta">
+      <BrowserRouter basename="wordpressvioleta/leonorvioleta">
           <Routes>
               <Route path="/" element={<Index/>}/>
           </Routes>
