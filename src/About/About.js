@@ -151,10 +151,10 @@ export default function About(){
                         <div style={{paddingBottom:"1rem"}}>
                             Feel free to contact me :)
                         </div>
-                        <div className="text-decoration-underline" onClick={handleEmailClick}>
+                        <div className="text-decoration-underline aboutLink" onClick={handleEmailClick}>
                             aleonorvioleta@gmail.com
                         </div>
-                        <div className="text-decoration-underline" onClick={handleInstagramClick}>
+                        <div className="text-decoration-underline aboutLink" onClick={handleInstagramClick}>
                             instagram
                         </div>
                     </div>
@@ -199,19 +199,19 @@ export default function About(){
                             You can also find my work at
                         </div>
                         <div style={{paddingTop:"1rem"}}>
-                            <a className="mb-0 text-decoration-underline d-block text-black" href="#" target="_blank">
+                            <a className="mb-0 text-decoration-underline d-block aboutLink" href="#" target="_blank">
                                 Águas Furtadas
                             </a>
-                            <a className="mb-0 text-decoration-underline d-block text-black" href="#" target="_blank">
+                            <a className="mb-0 text-decoration-underline d-block  aboutLink" href="#" target="_blank">
                                 Oficina Mescla
                             </a>
-                            <a className="mb-0 text-decoration-underline d-block text-black" href="#" target="_blank">
+                            <a className="mb-0 text-decoration-underline d-block  aboutLink" href="#" target="_blank">
                                 Lusco Fusco
                             </a>
-                            <a className="mb-0 text-decoration-underline d-block text-black" href="#" target="_blank">
+                            <a className="mb-0 text-decoration-underline d-block  aboutLink" href="#" target="_blank">
                                 Malapata Gallery
                             </a>
-                            <a className="mb-0 text-decoration-underline d-block text-black" href="#" target="_blank">
+                            <a className="mb-0 text-decoration-underline d-block  aboutLink" href="#" target="_blank">
                                 Unwind Studio
                             </a>
                         </div>

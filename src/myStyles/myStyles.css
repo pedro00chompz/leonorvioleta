@@ -203,3 +203,10 @@ body.hide-cursor {
     }
 }
 
+.aboutLink {
+    color: black;
+}
+
+.aboutLink:hover {
+    color: #51b9cd;
+}
