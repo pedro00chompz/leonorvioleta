@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/leonorvioleta/static/css/main.3c8ca132.css",
-    "main.js": "/leonorvioleta/static/js/main.58655d99.js",
+    "main.css": "/leonorvioleta/static/css/main.49b03081.css",
+    "main.js": "/leonorvioleta/static/js/main.3f2f5dc2.js",
     "static/js/787.738314be.chunk.js": "/leonorvioleta/static/js/787.738314be.chunk.js",
     "index.html": "/leonorvioleta/index.html",
-    "main.3c8ca132.css.map": "/leonorvioleta/static/css/main.3c8ca132.css.map",
-    "main.58655d99.js.map": "/leonorvioleta/static/js/main.58655d99.js.map",
+    "main.49b03081.css.map": "/leonorvioleta/static/css/main.49b03081.css.map",
+    "main.3f2f5dc2.js.map": "/leonorvioleta/static/js/main.3f2f5dc2.js.map",
     "787.738314be.chunk.js.map": "/leonorvioleta/static/js/787.738314be.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.3c8ca132.css",
-    "static/js/main.58655d99.js"
+    "static/css/main.49b03081.css",
+    "static/js/main.3f2f5dc2.js"
   ]
 }
