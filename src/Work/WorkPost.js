@@ -137,7 +137,11 @@ export default function WorkPost(props) {
                     <div className="col-1">
                     </div>
                     <div className="col-7 text-start" style={{paddingLeft:"1rem",paddingTop:`${navbarHeight}px`}}>
-                        <Carousel style={{width:"49.5rem"}} interval={null} indicators={false}>
+                        <Carousel
+                            style={{width:"49.5rem"}}
+                            interval={null}
+                            indicators={false}
+                        >
                             {workData.images.map((image, index) => (
                                 <Carousel.Item key={index}>
                                     <img className="d-block w-100" src={image} alt={`Slide ${index}`} style={{height: `${windowValueToUse - navbarHeightInRem}rem`,width:"49.5rem"}}/>

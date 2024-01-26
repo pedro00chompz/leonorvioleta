@@ -210,3 +210,18 @@ body.hide-cursor {
 .aboutLink:hover {
     color: #51b9cd;
 }
+
+
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+    width: 1.5vw;
+    height: 1.5vw;
+}
+
+.carousel-control-next {
+    right: -2rem;
+}
+
+.carousel-control-prev {
+    left: -2rem;
+}
