@@ -90,10 +90,10 @@ export default function Index() {
 
             {/* Inside Work */}
             {currentComponent === "SelectedWork" && <SelectedWork navbarHeight={navbarHeight}/>}
-            {currentComponent === "CollabsWork" && <CollabsWork />}
-            {currentComponent === "MuralWork" && <MuralWork />}
-            {currentComponent === "EditorialWork" && <EditorialWork />}
-            {currentComponent === "ArtWork" && <ArtWork />}
+            {currentComponent === "CollabsWork" && <CollabsWork navbarHeight={navbarHeight}/>}
+            {currentComponent === "MuralWork" && <MuralWork navbarHeight={navbarHeight}/>}
+            {currentComponent === "EditorialWork" && <EditorialWork navbarHeight={navbarHeight}/>}
+            {currentComponent === "ArtWork" && <ArtWork navbarHeight={navbarHeight}/>}
 
             {/* Inside Gallery */}
             {currentComponent === "IllustrationGallery" && <IllustrationGallery />}
@@ -101,13 +101,13 @@ export default function Index() {
             {currentComponent === "LoveGallery" && <LoveGallery />}
 
             {/* About */}
-            {currentComponent === "About" && <About />}
+            {currentComponent === "About" && <About navbarHeight={navbarHeight} />}
 
             {/* Inside Shop */}
-            {currentComponent === "PrintShop" && <PrintShop />}
-            {currentComponent === "CanvasShop" && <CanvasShop />}
-            {currentComponent === "CollabsShop" && <CollabsShop />}
-            {currentComponent === "AllShop" && <AllShop />}
+            {currentComponent === "PrintShop" && <PrintShop navbarHeight={navbarHeight}/>}
+            {currentComponent === "CanvasShop" && <CanvasShop navbarHeight={navbarHeight}/>}
+            {currentComponent === "CollabsShop" && <CollabsShop navbarHeight={navbarHeight}/>}
+            {currentComponent === "AllShop" && <AllShop navbarHeight={navbarHeight}/>}
 
             {/* NavBar for Small Screens */}
 
