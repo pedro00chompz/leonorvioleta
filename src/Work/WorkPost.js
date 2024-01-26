@@ -132,7 +132,7 @@ export default function WorkPost() {
                         <Carousel style={{width:"49.5rem"}} interval={null} indicators={false}>
                             {workData.images.map((image, index) => (
                                 <Carousel.Item key={index}>
-                                    <img className="d-block w-100" src={image} alt={`Slide ${index}`} style={{height:"32rem",width:"49.5rem"}}/>
+                                    <img className="d-block w-100" src={image} alt={`Slide ${index}`} style={{height: `${windowValueToUse - 8}rem`,width:"49.5rem"}}/>
                                 </Carousel.Item>
                             ))}
                         </Carousel>
