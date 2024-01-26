@@ -3,7 +3,15 @@ import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { useState, useRef, useEffect } from "react";
 import Carousel from 'react-bootstrap/Carousel';
 
-export default function WorkPost() {
+export default function WorkPost(props) {
+
+    const {navbarHeight} = props;
+
+    const navbarHeightInPixels = navbarHeight * 2;
+    const rootFontSize = parseFloat(getComputedStyle(document.documentElement).fontSize);
+    const navbarHeightInRem = navbarHeightInPixels / rootFontSize;
+
+
     const [showDescription, setShowDescription] = useState(false);
     const container = useRef(null);
     const [maxHeight, setMaxHeight] = useState(0);
@@ -109,7 +117,7 @@ export default function WorkPost() {
 
             <div className="d-none d-md-block overflow-x-hidden">
                 <div className="row" style={{height:`${windowValueToUse}rem`,backgroundColor:"white",borderBottom:"0.08rem solid black"}}>
-                    <div className="col-4" style={{paddingLeft:"3rem",paddingTop:"57px",borderRight:"0.08rem solid black"}}>
+                    <div className="col-4" style={{paddingLeft:"3rem",paddingTop:`${navbarHeight}px`,borderRight:"0.08rem solid black"}}>
                         <div className="text-start text-uppercase" style={{ paddingBottom: "1rem" }}>
                             {workData.title}
                         </div>
@@ -128,11 +136,11 @@ export default function WorkPost() {
                     </div>
                     <div className="col-1">
                     </div>
-                    <div className="col-7 text-start" style={{paddingLeft:"1rem",paddingTop:"4rem",}}>
+                    <div className="col-7 text-start" style={{paddingLeft:"1rem",paddingTop:`${navbarHeight}px`}}>
                         <Carousel style={{width:"49.5rem"}} interval={null} indicators={false}>
                             {workData.images.map((image, index) => (
                                 <Carousel.Item key={index}>
-                                    <img className="d-block w-100" src={image} alt={`Slide ${index}`} style={{height: `${windowValueToUse - 8}rem`,width:"49.5rem"}}/>
+                                    <img className="d-block w-100" src={image} alt={`Slide ${index}`} style={{height: `${windowValueToUse - navbarHeightInRem}rem`,width:"49.5rem"}}/>
                                 </Carousel.Item>
                             ))}
                         </Carousel>

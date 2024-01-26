@@ -89,7 +89,7 @@ export default function Index() {
             {currentComponent === "Home" && <Home />}
 
             {/* Inside Work */}
-            {currentComponent === "SelectedWork" && <SelectedWork />}
+            {currentComponent === "SelectedWork" && <SelectedWork navbarHeight={navbarHeight}/>}
             {currentComponent === "CollabsWork" && <CollabsWork />}
             {currentComponent === "MuralWork" && <MuralWork />}
             {currentComponent === "EditorialWork" && <EditorialWork />}

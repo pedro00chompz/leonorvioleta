@@ -1,12 +1,15 @@
 import WorkPost from "./WorkPost";
 
-export default function SelectedWork(){
+export default function SelectedWork(props){
+
+    const {navbarHeight} = props;
+
     return(
         <>
             <div style={{marginTop:"7rem",marginBottom:"3rem"}}>
-                <WorkPost/>
-                <WorkPost/>
-                <WorkPost/>
+                <WorkPost navbarHeight={navbarHeight}/>
+                <WorkPost navbarHeight={navbarHeight}/>
+                <WorkPost navbarHeight={navbarHeight}/>
             </div>
         </>
     )
