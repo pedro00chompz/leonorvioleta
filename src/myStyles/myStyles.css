@@ -143,7 +143,7 @@ body.hide-cursor {
 }
 
 .largePadding {
-    padding: 2.5rem 1.88rem 2.5rem 1.88rem;
+    padding: 57px 1.88rem 2.5rem 1.88rem;
 }
 
 @media (max-width: 767.98px) {
@@ -217,4 +217,19 @@ body.hide-cursor {
 
 .aboutLink:hover {
     color: #51b9cd;
+}
+
+
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+    width: 1.5vw;
+    height: 1.5vw;
+}
+
+.carousel-control-next {
+    right: -2rem;
+}
+
+.carousel-control-prev {
+    left: -2rem;
 }

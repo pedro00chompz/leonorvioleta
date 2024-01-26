@@ -1,6 +1,10 @@
 import {useEffect, useState} from "react";
 
-export default function About(){
+export default function About(props){
+
+    const {navbarHeight} = props;
+
+    const imgPaddingTop = navbarHeight * 2;
 
     const [windowHeightInRem, setWindowHeightInRem] = useState(0);
     const [windowValueToUse,setWindowValueToUse] = useState(0);
@@ -62,7 +66,7 @@ export default function About(){
                     <div className="text-uppercase" style={{paddingBottom:"1rem"}}>
                         contact
                     </div>
-                    <div>
+                    <div style={{lineHeight:"1.2rem"}}>
                         Hello ☺ I’m available to freelance projects, collaborations, comissioned illustrations.
                     </div>
                     <div style={{paddingBottom:"1rem"}}>
@@ -82,12 +86,12 @@ export default function About(){
                     }}
                     className="text-start"
                 >
-                    <div>Leonor Violeta, 1995</div>
+                    <div style={{lineHeight:"1.2rem"}}>Leonor Violeta, 1995</div>
                     <div>
-                        <p className="mb-0">Illustrator based in Porto that loves sun, chocolats and her cat ☺</p>
-                        <p className="mb-0">BA in Communication Design at ESAD Matosinhos, she also worked as a designer at R2 Design and Colonia Studio.</p>
-                        <p className="mb-0">Currently working as an illustrator, likes to explore different approaches and supports, but most of the times she divides her work into digital illustration, papercuts and mural paintings.</p>
-                        <p className="mb-0">Already works for brands as WeTransfer, Ágora Porto, Lemon Jelly, Cerveja MUSA, Parfois and Unwind Studio. Always interested in new projects and collaborations.</p>
+                        <p className="mb-0" style={{lineHeight:"1.2rem"}}>Illustrator based in Porto that loves sun, chocolats and her cat ☺</p>
+                        <p className="mb-0" style={{lineHeight:"1.2rem"}}>BA in Communication Design at ESAD Matosinhos, she also worked as a designer at R2 Design and Colonia Studio.</p>
+                        <p className="mb-0" style={{lineHeight:"1.2rem"}}>Currently working as an illustrator, likes to explore different approaches and supports, but most of the times she divides her work into digital illustration, papercuts and mural paintings.</p>
+                        <p className="mb-0" style={{lineHeight:"1.2rem"}}>Already works for brands as WeTransfer, Ágora Porto, Lemon Jelly, Cerveja MUSA, Parfois and Unwind Studio. Always interested in new projects and collaborations.</p>
                     </div>
                 </div>
                 <div
@@ -118,12 +122,12 @@ export default function About(){
             </div>
 
             {/* Large Screens */}
-            <div className="d-none d-md-block" style={{marginTop:"3.5rem",fontSize:"0.9rem",overflow:"hidden"}}>
+            <div className="d-none d-md-block" style={{marginTop:"3.5rem",overflow:"hidden"}}>
                 <img
                     src={process.env.PUBLIC_URL + '/aboutProfilePhoto.png'}
                     className="align-self-start"
                     alt="Leonor Violeta Profile Photo"
-                    style={{ paddingRight: "2rem",height:"22rem",width:"auto",zIndex:"1000",position:"fixed",top:"6.5rem",right:"0.5em" }}
+                    style={{ paddingRight: "2rem",height:"22rem",width:"auto",zIndex:"1000",position:"fixed",top:`${imgPaddingTop}px`,right:"0.5em" }}
                 />
                 <div className="row text-start"
                      style={{
@@ -140,12 +144,12 @@ export default function About(){
                         <div
                             className="text-uppercase"
                             style={{
-                                paddingTop:"3rem",
+                                paddingTop:`${navbarHeight}px`,
                                 paddingBottom:"1rem",
                         }}>
                             contact
                         </div>
-                        <div>
+                        <div style={{lineHeight:"1.2rem"}}>
                             Hello ☺ I’m available to freelance projects, collaborations, comissioned illustrations.
                         </div>
                         <div style={{paddingBottom:"1rem"}}>
@@ -166,13 +170,13 @@ export default function About(){
                         className="col-7"
                         style={{
                             paddingLeft:"1rem",
-                            paddingTop:"3rem",
+                            paddingTop:`${navbarHeight}px`,
                         }}
                     >
                         <div>
                             Leonor Violeta, 1995
                         </div>
-                        <div className="col-6" style={{paddingBottom:"3rem"}}>
+                        <div className="col-6" style={{paddingBottom:"3rem", lineHeight:"1.2rem"}} >
                             <p className="mb-0">Illustrator based in Porto that loves sun, chocolats and her cat ☺</p>
                             <p className="mb-0" style={{paddingBottom:"1rem"}}>BA in Communication Design at ESAD Matosinhos, she also worked as a designer at R2 Design and Colonia Studio.</p>
                             <p className="mb-0">Currently working as an illustrator, likes to explore different approaches and supports, but most of the times she divides her work into digital illustration, papercuts and mural paintings.</p>

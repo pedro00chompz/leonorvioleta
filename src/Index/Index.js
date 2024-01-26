@@ -28,6 +28,7 @@ import FooterLargeScreens from "../Footer/FooterLargeScreens";
 export default function Index() {
     const [currentComponent, setCurrentComponent] = useState("Home");
     const [footerColor, setFooterColor] = useState("normalColors");
+    const [navbarHeight,setNavbarHeight] = useState(null)
 
     // Lidar com a mudança de componentes
 
@@ -81,18 +82,18 @@ export default function Index() {
             {/* NavBar for Large Screens */}
 
             <div className="d-none d-md-block">
-                <NavBarLargeScreen handleComponentChange={handleComponentChange} />
+                <NavBarLargeScreen handleComponentChange={handleComponentChange} setNavbarHeight={setNavbarHeight}/>
             </div>
 
             {/* Main Components */}
             {currentComponent === "Home" && <Home />}
 
             {/* Inside Work */}
-            {currentComponent === "SelectedWork" && <SelectedWork />}
-            {currentComponent === "CollabsWork" && <CollabsWork />}
-            {currentComponent === "MuralWork" && <MuralWork />}
-            {currentComponent === "EditorialWork" && <EditorialWork />}
-            {currentComponent === "ArtWork" && <ArtWork />}
+            {currentComponent === "SelectedWork" && <SelectedWork navbarHeight={navbarHeight}/>}
+            {currentComponent === "CollabsWork" && <CollabsWork navbarHeight={navbarHeight}/>}
+            {currentComponent === "MuralWork" && <MuralWork navbarHeight={navbarHeight}/>}
+            {currentComponent === "EditorialWork" && <EditorialWork navbarHeight={navbarHeight}/>}
+            {currentComponent === "ArtWork" && <ArtWork navbarHeight={navbarHeight}/>}
 
             {/* Inside Gallery */}
             {currentComponent === "IllustrationGallery" && <IllustrationGallery />}
@@ -100,13 +101,13 @@ export default function Index() {
             {currentComponent === "LoveGallery" && <LoveGallery />}
 
             {/* About */}
-            {currentComponent === "About" && <About />}
+            {currentComponent === "About" && <About navbarHeight={navbarHeight} />}
 
             {/* Inside Shop */}
-            {currentComponent === "PrintShop" && <PrintShop />}
-            {currentComponent === "CanvasShop" && <CanvasShop />}
-            {currentComponent === "CollabsShop" && <CollabsShop />}
-            {currentComponent === "AllShop" && <AllShop />}
+            {currentComponent === "PrintShop" && <PrintShop propHeight={navbarHeight}/>}
+            {currentComponent === "CanvasShop" && <CanvasShop propHeight={navbarHeight}/>}
+            {currentComponent === "CollabsShop" && <CollabsShop propHeight={navbarHeight}/>}
+            {currentComponent === "AllShop" && <AllShop propHeight={navbarHeight}/>}
 
             {/* NavBar for Small Screens */}
 
@@ -117,7 +118,7 @@ export default function Index() {
                 />
             </div>
             <div className="d-none d-md-block">
-                <FooterLargeScreens footerColor={footerColor} />
+                <FooterLargeScreens footerColor={footerColor}/>
             </div>
         </>
     );
