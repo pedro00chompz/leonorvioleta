@@ -13,7 +13,7 @@ export default function GalleryImage({ galleryImage, textLineOne, textLineTwo, t
     };
 
     return (
-        <div className="flex-fill" style={{ padding: windowWidth > 767.98 ? "2.5rem 1.875rem" : colIndex === 1 ? "1.25rem 1.25rem 1.25rem 0.94rem" : "1.25rem 0.94rem 1.25rem 1.25rem", position: "relative" }}
+        <div className={`flex-fill ${isHovered ? "filtered" : ''}`} style={{ margin: windowWidth > 767.98 ? "3.495rem 1.875rem" : colIndex === 1 ? "1.25rem 1.25rem 1.25rem 0.94rem" : "1.25rem 0.94rem 1.25rem 1.25rem", position: "relative" }}
              onMouseEnter={windowWidth > 767.98 ? () => setIsHovered(true) : undefined}
              onMouseLeave={windowWidth > 767.98 ? () => setIsHovered(false) : undefined}
              onClick={windowWidth <= 767.98 ? () => setIsHovered(!isHovered) : undefined}>
@@ -28,6 +28,7 @@ export default function GalleryImage({ galleryImage, textLineOne, textLineTwo, t
                     imgWidth={imgWidth}
                     windowWidth={windowWidth}
                     colIndex={colIndex}
+                    galleryImage={galleryImage}
                 />
             )}
         </div>

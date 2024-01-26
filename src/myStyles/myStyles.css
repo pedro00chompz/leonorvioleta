@@ -186,13 +186,9 @@ body.hide-cursor {
     position: absolute;
     top: 0;
     left: 0;
-    background-color: var(--violeta-green, #3bc68a);
-    margin: 2.5rem 0 0 1.875rem;
-    opacity: 0.9;
     font-size: 1.5625rem;
     text-align: left;
     line-height: 1.75rem;
-    color: var(--violeta-white, #fff);
     width: 100%;
 }
 
@@ -202,6 +198,18 @@ body.hide-cursor {
         line-height: normal;
     }
 }
+
+.filtered {
+    background: var(--violeta-green, #3bc68a);
+}
+
+.filtered img {
+    mix-blend-mode: screen;
+    -webkit-filter: grayscale(100%) contrast(200%);
+    filter: grayscale(100%) contrast(200%);
+    opacity: 1;
+}
+
 
 .aboutLink {
     color: black;
