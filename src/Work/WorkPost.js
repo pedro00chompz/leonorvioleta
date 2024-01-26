@@ -109,7 +109,7 @@ export default function WorkPost() {
 
             <div className="d-none d-md-block overflow-x-hidden">
                 <div className="row" style={{height:`${windowValueToUse}rem`,backgroundColor:"white",borderBottom:"0.08rem solid black"}}>
-                    <div className="col-4" style={{paddingLeft:"3rem",paddingTop:"4rem",borderRight:"0.08rem solid black"}}>
+                    <div className="col-4" style={{paddingLeft:"3rem",paddingTop:"57px",borderRight:"0.08rem solid black"}}>
                         <div className="text-start text-uppercase" style={{ paddingBottom: "1rem" }}>
                             {workData.title}
                         </div>

@@ -1,8 +1,17 @@
-import {useState} from "react";
+import {useState,useRef, useEffect} from "react";
 
 export default function NavBarLargeScreen(props) {
 
-    const {handleComponentChange} = props;
+    const {handleComponentChange,setNavbarHeight} = props;
+
+    const rowRef = useRef(null);
+
+    useEffect(() => {
+        // Access the height of the row element
+        const height = rowRef.current.getBoundingClientRect().height;
+        setNavbarHeight(height);
+    }, [setNavbarHeight]); // Run this effect only once when the component mounts
+
 
     const [showWorkOptions, setShowWorkOptions] = useState(false);
     const [showGalleryOptions, setShowGalleryOptions] = useState(false);
@@ -36,6 +45,7 @@ export default function NavBarLargeScreen(props) {
             >
                 <div
                     className="row"
+                    ref={rowRef}
                     style={{
                         padding: "1rem",
                         borderBottom: "0.08rem solid white",

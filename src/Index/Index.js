@@ -28,6 +28,7 @@ import FooterLargeScreens from "../Footer/FooterLargeScreens";
 export default function Index() {
     const [currentComponent, setCurrentComponent] = useState("Home");
     const [footerColor, setFooterColor] = useState("normalColors");
+    const [navbarHeight,setNavbarHeight] = useState(null)
 
     // Lidar com a mudança de componentes
 
@@ -81,7 +82,7 @@ export default function Index() {
             {/* NavBar for Large Screens */}
 
             <div className="d-none d-md-block">
-                <NavBarLargeScreen handleComponentChange={handleComponentChange} />
+                <NavBarLargeScreen handleComponentChange={handleComponentChange} setNavbarHeight={setNavbarHeight}/>
             </div>
 
             {/* Main Components */}
@@ -117,7 +118,7 @@ export default function Index() {
                 />
             </div>
             <div className="d-none d-md-block">
-                <FooterLargeScreens footerColor={footerColor} />
+                <FooterLargeScreens footerColor={footerColor}/>
             </div>
         </>
     );
