@@ -94,11 +94,11 @@ export default function WorkPost(props) {
                     <div
                         className="text-start"
                         style={{
-                            fontSize: '0.8rem',
                             height: showDescription ? `${maxHeight}px` : '0px',
                             opacity: showDescription ? '1' : '0',
                             overflow: 'hidden',
                             transition: 'height 0.3s ease-out, opacity 0.3s ease-out',
+                            lineHeight: "1.2rem",
                         }}
                         ref={container}
                     >
@@ -130,7 +130,7 @@ export default function WorkPost(props) {
                         <div className="text-start text-uppercase" style={{ paddingBottom: "1rem" }}>
                             {workData.year}
                         </div>
-                        <div className="col-10 text-start">
+                        <div className="col-10 text-start" style={{lineHeight:"1.2rem"}}>
                             {workData.description}
                         </div>
                     </div>
