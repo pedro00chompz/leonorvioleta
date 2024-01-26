@@ -13,6 +13,7 @@ export default function PrintShop() {
       .then(response => response.json())
       .then(data => {
         const printDataArray = data
+          .filter(product => ['print', 'collabs', 'canvas'].some(section => product.acf.display_in_sections.includes(section)))
           .map(product => ({
             title: product.acf.title,
             price: product.acf.price,
