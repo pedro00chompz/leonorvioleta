@@ -18,7 +18,7 @@ export default function PrintShop() {
             title: product.acf.title,
             price: product.acf.price,
             type: product.acf.type,
-            paper: product.acf.paper,
+            material: product.acf.material,
             size: product.acf.size,
             image: product.acf && product.acf.print_image ? product.acf.print_image.url : null,
             shop: product.acf.shop,
