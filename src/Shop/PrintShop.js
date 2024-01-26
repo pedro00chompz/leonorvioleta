@@ -4,7 +4,10 @@ import React, { useState, useEffect } from "react";
 import PrintInfo from "./printComponents/PrintInfo";
 import PrintImage from "./printComponents/PrintImage";
 
-export default function PrintShop() {
+export default function PrintShop(props) {
+
+    const {propHeight} = props;
+
   const [printDataArray, setPrintDataArray] = useState([]);
   const [productHeight, setProductHeight] = useState('auto');
 
@@ -44,7 +47,7 @@ export default function PrintShop() {
       const navbarHeight = 7.125 * 16; // Convert rem to px
       const footerHeight = 3.530 * 16; // Convert rem to px
       const viewportHeight = window.innerHeight;
-      const productHeight = viewportHeight - navbarHeight - footerHeight;
+      const productHeight = (viewportHeight + 1) - navbarHeight - footerHeight;
   
       // Check if the window's width is less than or equal to 767.98px
       if (window.innerWidth <= 767.98) {
@@ -74,7 +77,7 @@ export default function PrintShop() {
           key={index} 
           style={{height: productHeight === 'auto' ? 'auto' : `${productHeight}px`}} // Change this line
         >
-          <div className="order-2 order-md-1 col-12 col-md-3 borderRight borderRight-sm printShopText largePadding largePadding-md">
+          <div className="order-2 order-md-1 col-12 col-md-3 borderRight borderRight-sm printShopText largePadding largePadding-md" style={{fontSize:"1rem"}}>
             <PrintInfo printData={printData} />
           </div>
           <div className="order-1 order-md-2 col-12 col-md-9 largePadding largePadding-md smallPadding-md">

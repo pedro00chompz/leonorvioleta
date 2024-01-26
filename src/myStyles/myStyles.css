@@ -143,7 +143,7 @@ body.hide-cursor {
 }
 
 .largePadding {
-    padding: 2.5rem 1.88rem 2.5rem 1.88rem;
+    padding: 57px 1.88rem 2.5rem 1.88rem;
 }
 
 @media (max-width: 767.98px) {

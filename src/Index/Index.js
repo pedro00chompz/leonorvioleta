@@ -104,10 +104,10 @@ export default function Index() {
             {currentComponent === "About" && <About navbarHeight={navbarHeight} />}
 
             {/* Inside Shop */}
-            {currentComponent === "PrintShop" && <PrintShop navbarHeight={navbarHeight}/>}
-            {currentComponent === "CanvasShop" && <CanvasShop navbarHeight={navbarHeight}/>}
-            {currentComponent === "CollabsShop" && <CollabsShop navbarHeight={navbarHeight}/>}
-            {currentComponent === "AllShop" && <AllShop navbarHeight={navbarHeight}/>}
+            {currentComponent === "PrintShop" && <PrintShop propHeight={navbarHeight}/>}
+            {currentComponent === "CanvasShop" && <CanvasShop propHeight={navbarHeight}/>}
+            {currentComponent === "CollabsShop" && <CollabsShop propHeight={navbarHeight}/>}
+            {currentComponent === "AllShop" && <AllShop propHeight={navbarHeight}/>}
 
             {/* NavBar for Small Screens */}
 
