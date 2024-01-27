@@ -1,3 +1,5 @@
+//WorkPost.js
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { useState, useRef, useEffect } from "react";
@@ -5,12 +7,11 @@ import Carousel from 'react-bootstrap/Carousel';
 
 export default function WorkPost(props) {
 
-    const {navbarHeight} = props;
+    const {navbarHeight, workData} = props;
 
     const navbarHeightInPixels = navbarHeight * 2;
     const rootFontSize = parseFloat(getComputedStyle(document.documentElement).fontSize);
     const navbarHeightInRem = navbarHeightInPixels / rootFontSize;
-
 
     const [showDescription, setShowDescription] = useState(false);
     const container = useRef(null);
@@ -39,19 +40,6 @@ export default function WorkPost(props) {
     }, []);
 
     console.log(windowValueToUse);
-
-    const workData = {
-        title: "agenda paralelo",
-        event: "ágora porto",
-        local: "teatro municipal do porto",
-        year: "2020",
-        description: "Paralelo is the schedule of Teatro Municipal do Porto dedicated to schools and families. Graphic design by Studio Eduardo Aires. ",
-        images: [
-            "https://i.ibb.co/3Tdkkmb/template-Img-Violeta.png",
-            "https://i.ibb.co/3Tdkkmb/template-Img-Violeta.png",
-            "https://i.ibb.co/3Tdkkmb/template-Img-Violeta.png"
-        ],
-    }
 
     useEffect(() => {
         if (container.current) {
@@ -105,12 +93,12 @@ export default function WorkPost(props) {
                         {workData.description}
                     </div>
                     <Carousel interval={null} indicators={false} style={{paddingTop:"1rem"}}>
-                        {workData.images.map((image, index) => (
-                            <Carousel.Item key={index}>
-                                <img className="d-block w-100" src={image} alt={`Slide ${index}`}/>
-                            </Carousel.Item>
-                        ))}
-                    </Carousel>                </div>
+    {workData.images.map((image, index) => (
+        <Carousel.Item key={index}>
+            <img className="d-block w-100" src={image} alt={`Slide ${index}`}/>
+        </Carousel.Item>
+    ))}
+</Carousel>             </div>
             </div>
 
             {/* Work posts for Large Screens */}
@@ -142,9 +130,9 @@ export default function WorkPost(props) {
                             interval={null}
                             indicators={false}
                         >
-                            {workData.images.map((image, index) => (
+                            {workData.images.map((images, index) => (
                                 <Carousel.Item key={index}>
-                                    <img className="d-block w-100" src={image} alt={`Slide ${index}`} style={{height: `${windowValueToUse - navbarHeightInRem}rem`,width:"49.5rem"}}/>
+                                    <img className="d-block w-100" src={images} alt={`Slide ${index}`} style={{height: `${windowValueToUse - navbarHeightInRem}rem`,width:"49.5rem"}}/>
                                 </Carousel.Item>
                             ))}
                         </Carousel>
