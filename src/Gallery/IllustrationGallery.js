@@ -1,61 +1,28 @@
-import React, {useEffect, useState} from "react";
+//IllustrationGallery.js
+
+import React, { useEffect, useState } from "react";
 import GalleryImage from "./galleryComponents/GalleryImage";
 
 export default function IllustrationGallery() {
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [illustrationDataArray, setIllustrationDataArray] = useState([]);
 
-    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-
-    const IllustrationDataArray = [
-        {
-            lineOne: "Cake design",
-            lineTwo: "Collab with",
-            lineThree: "A Bia Bolos",
-            year: "2023",
-            image: "galleryImg1.jpg",
-        },
-        {
-            lineOne: "Sit",
-            lineTwo: "Amet",
-            lineThree: "Consectetur",
-            year: "2001",
-            image: "galleryImg2.jpg",
-        },
-        {
-            lineOne: "Adipiscing",
-            lineTwo: "Elit",
-            lineThree: "Sed",
-            year: "2002",
-            image: "galleryImg3.jpg",
-        },
-        {
-            lineOne: "Eiusmod",
-            lineTwo: "Tempor",
-            lineThree: "Incididunt",
-            year: "2003",
-            image: "galleryImg4.jpg",
-        },
-        {
-            lineOne: "Labore",
-            lineTwo: "Dolore",
-            lineThree: "Magna",
-            year: "2004",
-            image: "galleryImg4.jpg",
-        },
-        {
-            lineOne: "Exercitation",
-            lineTwo: "Minim",
-            lineThree: "Veniam",
-            year: "2005",
-            image: "galleryImg4.jpg",
-        },
-        {
-            lineOne: "Cupidatat",
-            lineTwo: "Proident",
-            lineThree: "Deserunt",
-            year: "2021",
-            image: "galleryImg3.jpg",
-        },
-    ];
+  useEffect(() => {
+    fetch('http://localhost/wordpressVioleta/wp-json/wp/v2/gallery')
+      .then(response => response.json())
+      .then(data => {
+        const illustrationDataArray = data
+          .filter(gallery => gallery.acf.display_in_sections.includes('illustration'))
+          .map(gallery => ({
+            lineOne: gallery.acf.line_one,
+            lineTwo: gallery.acf.line_two,
+            lineThree: gallery.acf.line_three,
+            year: gallery.acf.year,
+            image: gallery.acf && gallery.acf.gallery_image ? gallery.acf.gallery_image.url : null,
+          }));
+        setIllustrationDataArray(illustrationDataArray);
+      });
+  }, []);
 
 
     //change body colour to black on mount and get window width
@@ -79,13 +46,13 @@ export default function IllustrationGallery() {
 
     if(windowWidth > 767.98) {
         //if desktop group the data into groups of 4
-        for (let i = 0; i < IllustrationDataArray.length; i += 4) {
-            groupedArray.push(IllustrationDataArray.slice(i, i + 4));
+        for (let i = 0; i < illustrationDataArray.length; i += 4) {
+            groupedArray.push(illustrationDataArray.slice(i, i + 4));
         }
     } else {
         //if mobile group the data into groups of 2
-        for (let i = 0; i < IllustrationDataArray.length; i += 2) {
-            groupedArray.push(IllustrationDataArray.slice(i, i + 2));
+        for (let i = 0; i < illustrationDataArray.length; i += 2) {
+            groupedArray.push(illustrationDataArray.slice(i, i + 2));
         }
     }
 

@@ -1,3 +1,5 @@
+//GalleryImage.js
+
 import React, { useState } from 'react';
 import GalleryInfo from "./GalleryInfo";
 
@@ -17,7 +19,7 @@ export default function GalleryImage({ galleryImage, textLineOne, textLineTwo, t
              onMouseEnter={windowWidth > 767.98 ? () => setIsHovered(true) : undefined}
              onMouseLeave={windowWidth > 767.98 ? () => setIsHovered(false) : undefined}
              onClick={windowWidth <= 767.98 ? () => setIsHovered(!isHovered) : undefined}>
-            <img src={process.env.PUBLIC_URL + '/' + galleryImage} alt="placeholder" className="img-fluid" style={{width:"100%"}} onLoad={getImgHW}/>
+            <img src={galleryImage} alt="placeholder" className="img-fluid" style={{width:"100%"}} onLoad={getImgHW}/>
             {isHovered && (
                 <GalleryInfo
                     lineOne={textLineOne}

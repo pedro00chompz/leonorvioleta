@@ -1,3 +1,5 @@
+//GalleryInfo.js
+
 import React from "react";
 
 export default function GalleryInfo({lineOne, lineTwo, lineThree, year, imgHeight, imgWidth }) {
