@@ -7,15 +7,27 @@ export default function Home() {
   const [imageSrc, setImageSrc] = useState("");
   const [marginTop, setMarginTop] = useState(navbarHeight);
   const [padding, setPadding] = useState("2rem");
+  const [desktopImage, setDesktopImage] = useState("");
+  const [mobileImage, setMobileImage] = useState("");
 
   useEffect(() => {
+    // Fetch data from the WordPress API
+    fetch('http://localhost/wordpressVioleta/wp-json/wp/v2/home')
+    .then(response => response.json())
+    .then(data => {
+        // Assuming the first post is the one you want
+        const homePost = data[0];
+        setDesktopImage(homePost.acf.desktop_image.url);
+        setMobileImage(homePost.acf.mobile_image.url);
+    });
+
     const handleResize = () => {
       if (window.innerWidth <= 767.98) {
-        setImageSrc(process.env.PUBLIC_URL + "/homeMobile.png");
+        setImageSrc(mobileImage);
         setMarginTop(`calc(${navbarHeight} * 2)`);
         setPadding("1rem");
       } else {
-        setImageSrc(process.env.PUBLIC_URL + "/home.png");
+        setImageSrc(desktopImage);
         setMarginTop(navbarHeight);
         setPadding("2rem");
       }
@@ -29,7 +41,7 @@ export default function Home() {
 
     // Cleanup on unmount
     return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  }, [desktopImage, mobileImage]);
 
   const imageStyle = {
     height: "100%",
