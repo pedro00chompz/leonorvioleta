@@ -1,4 +1,5 @@
 //FooterSmallScreen.js
+
 import React from 'react';
 
 export default function FooterSmallScreens({footerColor, isHome}) {

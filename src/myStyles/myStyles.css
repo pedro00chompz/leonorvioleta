@@ -219,8 +219,6 @@ body.hide-cursor {
     color: #51b9cd;
 }
 
-
-
 @media (min-width: 768px) {
     .carousel-control-next-icon,
     .carousel-control-prev-icon {
