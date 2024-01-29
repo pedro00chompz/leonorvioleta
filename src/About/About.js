@@ -19,19 +19,19 @@ export default function About(props) {
     fetch("http://localhost/wordpressVioleta/wp-json/wp/v2/about")
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
         const firstElement = data[0];
         setSection01({
-            text: firstElement.acf.text,
-            email: firstElement.acf.email.replace('http://', ''),
-            instagram: firstElement.acf.instagram.url,
+          text: firstElement.acf.text,
+          email: firstElement.acf.email.replace("http://", ""),
+          instagram: firstElement.acf.instagram.url,
         });
         setSection02({
-            bio: firstElement.acf.bio,
-            image: firstElement.acf.bio_image.url,
+          bio01: firstElement.acf.bio_01,
+          bio02: firstElement.acf.bio_02,
+          image: firstElement.acf.bio_image.url,
         });
         setSection04({
-            placeholder: firstElement.acf.placeholder,
+          placeholder: firstElement.acf.placeholder,
         });
       })
       .catch((error) => {
@@ -132,25 +132,22 @@ export default function About(props) {
           }}
           className="text-start"
         >
-          <div style={{ lineHeight: "1.2rem" }}>Leonor Violeta, 1995 2ND SECTION MOBILE</div>
-          <div>
-            <p className="mb-0" style={{ lineHeight: "1.2rem" }}>
-              Illustrator based in Porto that loves sun, chocolats and her cat ☺
-            </p>
-            <p className="mb-0" style={{ lineHeight: "1.2rem" }}>
-              BA in Communication Design at ESAD Matosinhos, she also worked as
-              a designer at R2 Design and Colonia Studio.
-            </p>
-            <p className="mb-0" style={{ lineHeight: "1.2rem" }}>
-              Currently working as an illustrator, likes to explore different
-              approaches and supports, but most of the times she divides her
-              work into digital illustration, papercuts and mural paintings.
-            </p>
-            <p className="mb-0" style={{ lineHeight: "1.2rem" }}>
-              Already works for brands as WeTransfer, Ágora Porto, Lemon Jelly,
-              Cerveja MUSA, Parfois and Unwind Studio. Always interested in new
-              projects and collaborations.
-            </p>
+          <div style={{ lineHeight: "1.2rem" }}>
+            {section02.bio01 &&
+              section02.bio01.split("\n").map((paragraph, index) => (
+                <p key={index} className="mb-0">
+                  {paragraph}
+                </p>
+              ))}
+          </div>
+
+          <div style={{ lineHeight: "1.2rem" }}>
+            {section02.bio02 &&
+              section02.bio02.split("\n").map((paragraph, index) => (
+                <p key={index} className="mb-0">
+                  {paragraph}
+                </p>
+              ))}
           </div>
         </div>
         <div
@@ -205,25 +202,23 @@ export default function About(props) {
           }}
           className="text-start"
         >
-          <div style={{ lineHeight: "1.2rem" }}>Leonor Violeta, 1995 4TH SECTION MOBILE</div>
-          <div>
-            <p className="mb-0" style={{ lineHeight: "1.2rem" }}>
-              Illustrator based in Porto that loves sun, chocolats and her cat ☺
-            </p>
-            <p className="mb-0" style={{ lineHeight: "1.2rem" }}>
-              BA in Communication Design at ESAD Matosinhos, she also worked as
-              a designer at R2 Design and Colonia Studio.
-            </p>
-            <p className="mb-0" style={{ lineHeight: "1.2rem" }}>
-              Currently working as an illustrator, likes to explore different
-              approaches and supports, but most of the times she divides her
-              work into digital illustration, papercuts and mural paintings.
-            </p>
-            <p className="mb-0" style={{ lineHeight: "1.2rem" }}>
-              Already works for brands as WeTransfer, Ágora Porto, Lemon Jelly,
-              Cerveja MUSA, Parfois and Unwind Studio. Always interested in new
-              projects and collaborations.
-            </p>
+          <div style={{ lineHeight: "1.2rem" }}>
+            {section04.placeholder && section04.placeholder.trim() !== "" && (
+              <div
+                style={{
+                  padding: "1rem",
+                }}
+                className="text-start"
+              >
+                <div style={{ lineHeight: "1.2rem" }}>
+                  {section04.placeholder.split("\n").map((paragraph, index) => (
+                    <p key={index} className="mb-0">
+                      {paragraph}
+                    </p>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </div>
@@ -289,34 +284,27 @@ export default function About(props) {
           <div className="col-1"></div>
           <div
             className="col-7"
-            style={{
-              paddingLeft: "1rem",
-              paddingTop: `${navbarHeight}px`,
-            }}
+            style={{ paddingLeft: "1rem", paddingTop: `${navbarHeight}px` }}
           >
-            <div>Leonor Violeta, 1995 2ND SECTION DESKTOP</div>
             <div
               className="col-6"
               style={{ paddingBottom: "3rem", lineHeight: "1.2rem" }}
             >
-              <p className="mb-0">
-                Illustrator based in Porto that loves sun, chocolates and her cat
-                ☺
-              </p>
-              <p className="mb-0" style={{ paddingBottom: "1rem" }}>
-                BA in Communication Design at ESAD Matosinhos, she also worked
-                as a designer at R2 Design and Colonia Studio.
-              </p>
-              <p className="mb-0">
-                Currently working as an illustrator, likes to explore different
-                approaches and supports, but most of the times she divides her
-                work into digital illustration, papercuts and mural paintings.
-              </p>
-              <p className="mb-0">
-                Already works for brands as WeTransfer, Ágora Porto, Lemon
-                Jelly, Cerveja MUSA, Parfois and Unwind Studio. Always
-                interested in new projects and collaborations.
-              </p>
+              {section02.bio01 &&
+                section02.bio01.split("\n").map((paragraph, index) => (
+                  <p key={index} className="mb-0">
+                    {paragraph}
+                  </p>
+                ))}
+
+              <p style={{ paddingBottom: "1rem" }}></p>
+
+              {section02.bio02 &&
+                section02.bio02.split("\n").map((paragraph, index) => (
+                  <p key={index} className="mb-0">
+                    {paragraph}
+                  </p>
+                ))}
             </div>
           </div>
         </div>
@@ -387,29 +375,20 @@ export default function About(props) {
               paddingTop: `${navbarHeight}px`,
             }}
           >
-            <div>Leonor Violeta, 1995 4TH SECTION DESKTOP</div>
             <div
               className="col-6"
               style={{ paddingBottom: "3rem", lineHeight: "1.2rem" }}
             >
-              <p className="mb-0">
-                Illustrator based in Porto that loves sun, chocolates and her cat
-                ☺
-              </p>
-              <p className="mb-0" style={{ paddingBottom: "1rem" }}>
-                BA in Communication Design at ESAD Matosinhos, she also worked
-                as a designer at R2 Design and Colonia Studio.
-              </p>
-              <p className="mb-0">
-                Currently working as an illustrator, likes to explore different
-                approaches and supports, but most of the times she divides her
-                work into digital illustration, papercuts and mural paintings.
-              </p>
-              <p className="mb-0">
-                Already works for brands as WeTransfer, Ágora Porto, Lemon
-                Jelly, Cerveja MUSA, Parfois and Unwind Studio. Always
-                interested in new projects and collaborations.
-              </p>
+              {section04.placeholder &&
+                section04.placeholder.split("\n").map((paragraph, index) => (
+                  <p
+                    key={index}
+                    className="mb-0"
+                    style={index === 1 ? { paddingBottom: "1rem" } : {}}
+                  >
+                    {paragraph}
+                  </p>
+                ))}
             </div>
           </div>
         </div>
