@@ -1,3 +1,5 @@
+//About.js
+
 import { useEffect, useState } from "react";
 
 export default function About(props) {
@@ -9,19 +11,27 @@ export default function About(props) {
   const [windowValueToUse, setWindowValueToUse] = useState(0);
 
   const [section01, setSection01] = useState({});
+  const [section02, setSection02] = useState({});
+  const [section03, setSection03] = useState({});
+  const [section04, setSection04] = useState({});
 
   useEffect(() => {
     fetch("http://localhost/wordpressVioleta/wp-json/wp/v2/about")
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
-        // Access the first element of the array
         const firstElement = data[0];
-        console.log(firstElement.acf); // Add this line
         setSection01({
             text: firstElement.acf.text,
             email: firstElement.acf.email.replace('http://', ''),
-            instagram: firstElement.acf.instagram,
+            instagram: firstElement.acf.instagram.url,
+        });
+        setSection02({
+            bio: firstElement.acf.bio,
+            image: firstElement.acf.bio_image.url,
+        });
+        setSection04({
+            placeholder: firstElement.acf.placeholder,
         });
       })
       .catch((error) => {
@@ -69,7 +79,7 @@ export default function About(props) {
       {/* Small Screens */}
       <div className="d-sm-block d-md-none" style={{ marginTop: "7rem" }}>
         <img
-          src={process.env.PUBLIC_URL + "/aboutProfilePhoto.png"}
+          src={section02.image}
           className="img-fluid"
           style={{
             padding: "1rem",
@@ -122,7 +132,7 @@ export default function About(props) {
           }}
           className="text-start"
         >
-          <div style={{ lineHeight: "1.2rem" }}>Leonor Violeta, 1995</div>
+          <div style={{ lineHeight: "1.2rem" }}>Leonor Violeta, 1995 2ND SECTION MOBILE</div>
           <div>
             <p className="mb-0" style={{ lineHeight: "1.2rem" }}>
               Illustrator based in Porto that loves sun, chocolats and her cat ☺
@@ -146,6 +156,7 @@ export default function About(props) {
         <div
           style={{
             padding: "1rem",
+            borderBottom: "0.08rem solid black",
           }}
           className="text-start"
         >
@@ -188,6 +199,33 @@ export default function About(props) {
             </a>
           </div>
         </div>
+        <div
+          style={{
+            padding: "1rem",
+          }}
+          className="text-start"
+        >
+          <div style={{ lineHeight: "1.2rem" }}>Leonor Violeta, 1995 4TH SECTION MOBILE</div>
+          <div>
+            <p className="mb-0" style={{ lineHeight: "1.2rem" }}>
+              Illustrator based in Porto that loves sun, chocolats and her cat ☺
+            </p>
+            <p className="mb-0" style={{ lineHeight: "1.2rem" }}>
+              BA in Communication Design at ESAD Matosinhos, she also worked as
+              a designer at R2 Design and Colonia Studio.
+            </p>
+            <p className="mb-0" style={{ lineHeight: "1.2rem" }}>
+              Currently working as an illustrator, likes to explore different
+              approaches and supports, but most of the times she divides her
+              work into digital illustration, papercuts and mural paintings.
+            </p>
+            <p className="mb-0" style={{ lineHeight: "1.2rem" }}>
+              Already works for brands as WeTransfer, Ágora Porto, Lemon Jelly,
+              Cerveja MUSA, Parfois and Unwind Studio. Always interested in new
+              projects and collaborations.
+            </p>
+          </div>
+        </div>
       </div>
 
       {/* Large Screens */}
@@ -196,7 +234,7 @@ export default function About(props) {
         style={{ marginTop: "3.5rem", overflow: "hidden" }}
       >
         <img
-          src={process.env.PUBLIC_URL + "/aboutProfilePhoto.png"}
+          src={section02.image}
           className="align-self-start"
           alt="Leonor Violeta Profile Photo"
           style={{
@@ -256,13 +294,13 @@ export default function About(props) {
               paddingTop: `${navbarHeight}px`,
             }}
           >
-            <div>Leonor Violeta, 1995</div>
+            <div>Leonor Violeta, 1995 2ND SECTION DESKTOP</div>
             <div
               className="col-6"
               style={{ paddingBottom: "3rem", lineHeight: "1.2rem" }}
             >
               <p className="mb-0">
-                Illustrator based in Porto that loves sun, chocolats and her cat
+                Illustrator based in Porto that loves sun, chocolates and her cat
                 ☺
               </p>
               <p className="mb-0" style={{ paddingBottom: "1rem" }}>
@@ -349,13 +387,13 @@ export default function About(props) {
               paddingTop: `${navbarHeight}px`,
             }}
           >
-            <div>Leonor Violeta, 1995</div>
+            <div>Leonor Violeta, 1995 4TH SECTION DESKTOP</div>
             <div
               className="col-6"
               style={{ paddingBottom: "3rem", lineHeight: "1.2rem" }}
             >
               <p className="mb-0">
-                Illustrator based in Porto that loves sun, chocolats and her cat
+                Illustrator based in Porto that loves sun, chocolates and her cat
                 ☺
               </p>
               <p className="mb-0" style={{ paddingBottom: "1rem" }}>
