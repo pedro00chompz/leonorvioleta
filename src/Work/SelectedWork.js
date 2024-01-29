@@ -34,7 +34,7 @@ export default function SelectedWork(props) {
 
   return (
     <>
-      <div style={{ marginTop: "7rem", marginBottom: "3rem" }}>
+      <div style={{ marginTop: "7rem", marginBottom: "0rem" }}>
         {workDataArray.map((workData, index) => (
           <WorkPost
             key={index}

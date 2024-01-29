@@ -9,6 +9,23 @@ export default function About(props){
     const [windowHeightInRem, setWindowHeightInRem] = useState(0);
     const [windowValueToUse,setWindowValueToUse] = useState(0);
 
+    const [section01, setSection01] = useState({});
+
+    useEffect(() => {
+        fetch('http://localhost/wordpressVioleta/wp-json/wp/v2/about')
+            .then(response => response.json())
+            .then(data => {
+                setSection01({
+                    text: data.acf.section_01.text,
+                    email: data.acf.section_01.email,
+                    instagram: data.acf.section_01.instagram
+                });
+            })
+            .catch(error => {
+                console.error('Error fetching ACF data', error);
+            });
+    }, []);
+
     useEffect(() => {
         const calculateWindowHeightInRem = () => {
             const baseFontSize = 16; // Default base font size in pixels
@@ -29,6 +46,7 @@ export default function About(props){
         };
     }, []);
 
+    console.log(section01);
     console.log(windowValueToUse);
 
     const halfValue = windowValueToUse /2;
@@ -66,7 +84,16 @@ export default function About(props){
                     <div className="text-uppercase" style={{paddingBottom:"1rem"}}>
                         contact
                     </div>
-                    <div style={{lineHeight:"1.2rem"}}>
+                    <div style={{lineHeight:"1.2rem", paddingBottom:"1rem"}}>
+                        {section01.text}
+                    </div>
+                    <div className="text-decoration-underline" onClick={() => window.open(`mailto:${section01.email}`, '_blank')}>
+                        {section01.email}
+                    </div>
+                    <div className="text-decoration-underline" onClick={() => window.open(section01.instagram, '_blank')}>
+                        instagram
+                    </div>
+{/*                     <div style={{lineHeight:"1.2rem"}}>
                         Hello ☺ I’m available to freelance projects, collaborations, comissioned illustrations.
                     </div>
                     <div style={{paddingBottom:"1rem"}}>
@@ -77,7 +104,7 @@ export default function About(props){
                     </div>
                     <div className="text-decoration-underline" onClick={handleInstagramClick}>
                         instagram
-                    </div>
+                    </div> */}
                 </div>
                 <div
                     style={{
@@ -149,16 +176,13 @@ export default function About(props){
                         }}>
                             contact
                         </div>
-                        <div style={{lineHeight:"1.2rem"}}>
-                            Hello ☺ I’m available to freelance projects, collaborations, comissioned illustrations.
+                        <div style={{lineHeight:"1.2rem", paddingBottom:"1rem"}}>
+                            {section01.text}
                         </div>
-                        <div style={{paddingBottom:"1rem"}}>
-                            Feel free to contact me :)
+                        <div className="text-decoration-underline" onClick={() => window.open(`mailto:${section01.email}`, '_blank')}>
+                            {section01.email}
                         </div>
-                        <div className="text-decoration-underline aboutLink" onClick={handleEmailClick}>
-                            aleonorvioleta@gmail.com
-                        </div>
-                        <div className="text-decoration-underline aboutLink" onClick={handleInstagramClick}>
+                        <div className="text-decoration-underline" onClick={() => window.open(section01.instagram, '_blank')}>
                             instagram
                         </div>
                     </div>
@@ -218,6 +242,27 @@ export default function About(props){
                             <a className="mb-0 text-decoration-underline d-block  aboutLink" href="#" target="_blank">
                                 Unwind Studio
                             </a>
+                        </div>
+                    </div>
+                    <div
+                        className="col-1"
+                    >
+                    </div>
+                    <div
+                        className="col-7"
+                        style={{
+                            paddingLeft:"1rem",
+                            paddingTop:`${navbarHeight}px`,
+                        }}
+                    >
+                        <div>
+                            Leonor Violeta, 1995
+                        </div>
+                        <div className="col-6" style={{paddingBottom:"3rem", lineHeight:"1.2rem"}} >
+                            <p className="mb-0">Illustrator based in Porto that loves sun, chocolats and her cat ☺</p>
+                            <p className="mb-0" style={{paddingBottom:"1rem"}}>BA in Communication Design at ESAD Matosinhos, she also worked as a designer at R2 Design and Colonia Studio.</p>
+                            <p className="mb-0">Currently working as an illustrator, likes to explore different approaches and supports, but most of the times she divides her work into digital illustration, papercuts and mural paintings.</p>
+                            <p className="mb-0">Already works for brands as WeTransfer, Ágora Porto, Lemon Jelly, Cerveja MUSA, Parfois and Unwind Studio. Always interested in new projects and collaborations.</p>
                         </div>
                     </div>
                 </div>

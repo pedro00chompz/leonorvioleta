@@ -220,16 +220,19 @@ body.hide-cursor {
 }
 
 
-.carousel-control-next-icon,
-.carousel-control-prev-icon {
-    width: 1.5vw;
-    height: 1.5vw;
-}
 
-.carousel-control-next {
-    right: -2rem;
-}
+@media (min-width: 768px) {
+    .carousel-control-next-icon,
+    .carousel-control-prev-icon {
+        width: 1.5vw;
+        height: 1.5vw;
+    }
 
-.carousel-control-prev {
-    left: -2rem;
+    .carousel-control-next {
+        right: -2rem;
+    }
+
+    .carousel-control-prev {
+        left: -2rem;
+    }
 }
