@@ -15,7 +15,6 @@ export default function Home() {
     fetch('http://localhost/wordpressVioleta/wp-json/wp/v2/home')
     .then(response => response.json())
     .then(data => {
-        // Assuming the first post is the one you want
         const homePost = data[0];
         setDesktopImage(homePost.acf.desktop_image.url);
         setMobileImage(homePost.acf.mobile_image.url);
