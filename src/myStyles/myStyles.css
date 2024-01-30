@@ -234,3 +234,9 @@ body.hide-cursor {
         left: -2rem;
     }
 }
+
+@media (max-width: 768px) {
+    .mobileAboutPadding {
+      padding: 0rem !important;
+    }
+  }

@@ -161,7 +161,7 @@ export default function About(props) {
         <div
           style={{
             padding: "1rem",
-            borderBottom: "0.08rem solid black",
+            borderBottom: section04.placeholder && section04.placeholder.trim() !== "" ? "0.08rem solid black" : "none",
           }}
           className="text-start"
         >
@@ -183,19 +183,30 @@ export default function About(props) {
         </div>
         <div
           style={{
-            padding: "1rem",
+            padding: "0rem",
           }}
           className="text-start"
         >
           <div style={{ lineHeight: "1.2rem" }}>
             {section04.placeholder && section04.placeholder.trim() !== "" && (
-              <div className="text-start">
+              <div
+                style={{
+                  padding: "1rem",
+                }}
+                className="text-start"
+              >
                 <div style={{ lineHeight: "1.2rem" }}>
-                  {section04.placeholder.split("\n").map((paragraph, index) => (
-                    <p key={index} className="mb-0">
-                      {paragraph}
-                    </p>
-                  ))}
+                  <div className="text-start">
+                    <div style={{ lineHeight: "1.2rem" }}>
+                      {section04.placeholder
+                        .split("\n")
+                        .map((paragraph, index) => (
+                          <p key={index} className="mb-0">
+                            {paragraph}
+                          </p>
+                        ))}
+                    </div>
+                  </div>
                 </div>
               </div>
             )}
