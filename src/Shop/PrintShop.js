@@ -80,7 +80,7 @@ export default function PrintShop(props) {
           <div className="order-2 order-md-1 col-12 col-md-3 borderRight borderRight-sm printShopText largePadding largePadding-md" style={{fontSize:"1rem"}}>
             <PrintInfo printData={printData} />
           </div>
-          <div className="order-1 order-md-2 col-12 col-md-9 largePadding largePadding-md smallPadding-md" style={{paddingBottom:"3.5rem"}}>
+          <div className="order-1 order-md-2 col-12 col-md-9 largePadding largePadding-md smallPadding-md forceBottomPadding">
             <PrintImage printImage={printData.image} />
           </div>
         </div>

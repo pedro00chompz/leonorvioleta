@@ -99,6 +99,7 @@ body.hide-cursor {
     .shopNowLink {
         font-size: 1rem;
     }
+
 }
 
 .shopNowLink:hover {
@@ -165,6 +166,7 @@ body.hide-cursor {
     .smallPadding-md {
         padding-bottom: 0;
     }
+
 }
 
 .imageContainer {
@@ -197,6 +199,7 @@ body.hide-cursor {
         font-size: 0.875rem;
         line-height: normal;
     }
+
 }
 
 .filtered {
@@ -233,3 +236,10 @@ body.hide-cursor {
 .carousel-control-prev {
     left: -2rem;
 }
+
+@media screen and (min-width: 768px) {
+    .forceBottomPadding {
+        padding-bottom: 57px;
+    }
+}
+
