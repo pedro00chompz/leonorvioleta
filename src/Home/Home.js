@@ -15,7 +15,7 @@ export default function Home() {
         setMarginTop(`calc(${navbarHeight} * 2)`);
         setPadding("1rem");
       } else {
-        setImageSrc(process.env.PUBLIC_URL + "/home.png");
+        setImageSrc(process.env.PUBLIC_URL + "/homeHD.png");
         setMarginTop(navbarHeight);
         setPadding("2rem");
       }
