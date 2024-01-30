@@ -174,7 +174,7 @@ export default function WorkPost(props) {
                     alt={`Slide ${index}`}
                     style={{
                       height: `${windowValueToUse - navbarHeightInRem}rem`,
-                      width: "100%", 
+                      width: "49.5rem", 
                       objectFit: "cover",
                     }}
                   />
