@@ -50,8 +50,13 @@ export default function Home() {
   };
   
   return (
-    <div style={containerStyle}>
-      <img src={imageSrc} alt="Home" style={imageStyle} />
-    </div>
+      <>
+        <div className="d-sm-block d-md-none d-flex align-items-center" style={containerStyle}>
+          <img src={imageSrc} alt="Home" style={{height:"80%",width:"80%"}}/>
+        </div>
+       <div className="d-none d-md-block" style={containerStyle}>
+          <img src={imageSrc} alt="Home" style={imageStyle} />
+       </div>
+      </>
   );
 }
