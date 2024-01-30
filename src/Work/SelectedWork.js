@@ -14,25 +14,25 @@ export default function SelectedWork(props) {
 
   useEffect(() => {
     // Fetch data from the WordPress API
-    fetch('http://localhost/wordpressVioleta/wp-json/wp/v2/work')
-    .then(response => response.json())
-    .then(data => {
+    fetch("http://localhost/wordpressVioleta/wp-json/wp/v2/work")
+      .then((response) => response.json())
+      .then((data) => {
         const workDataArray = data
-            .filter(work => work.acf.display_in_sections.includes('selected'))
-            .map(work => ({
-                title: work.acf.title,
-                event: work.acf.event,
-                local: work.acf.local,
-                year: work.acf.year,
-                description: work.acf.description,
-                images: [
-                    work.acf.images_01.url,
-                    work.acf.images_02.url,
-                    work.acf.images_03.url,
-                ].filter(Boolean), // Remove any undefined or null values
-            }));
+          .filter((work) => work.acf.display_in_sections.includes("selected"))
+          .map((work) => ({
+            title: work.acf.title,
+            event: work.acf.event,
+            local: work.acf.local,
+            year: work.acf.year,
+            description: work.acf.description,
+            images: [
+              work.acf.images_01.url,
+              work.acf.images_02.url,
+              work.acf.images_03.url,
+            ].filter(Boolean), // Remove any undefined or null values
+          }));
         setWorkDataArray(workDataArray);
-    });
+      });
 
     // Event listener for window resize
     const handleResize = () => {
@@ -40,22 +40,28 @@ export default function SelectedWork(props) {
     };
 
     // Attach the event listener
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
 
     // Clean up the event listener on component unmount
     return () => {
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
 
   return (
     <>
-      <div style={{ marginTop: "7rem", marginBottom: windowWidth >= 768 ? "3rem" : "0" }}>
+      <div
+        style={{
+          marginTop: "7rem",
+          marginBottom: windowWidth >= 768 ? "3rem" : "0",
+        }}
+      >
         {workDataArray.map((workData, index) => (
           <WorkPost
             key={index}
             workData={workData}
             navbarHeight={navbarHeight}
+            isLast={index === workDataArray.length - 1}
           />
         ))}
       </div>

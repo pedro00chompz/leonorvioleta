@@ -56,7 +56,7 @@ export default function WorkPost(props) {
             {/* Work posts for Small Screens */}
 
             <div className="d-sm-block d-md-none overflow-x-hidden">
-                <div style={{ padding: "1rem", borderBottom: "0.08rem solid black", backgroundColor: "white", }}>
+                <div style={{ padding: "1rem", borderBottom: props.isLast ? "none" : "0.08rem solid black", backgroundColor: "white", }}>
                     <div className="text-start text-uppercase" style={{ paddingBottom: "1rem" }}>
                         {workData.title}
                     </div>
