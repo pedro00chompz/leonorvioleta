@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/wordpressVioleta/wp-content/reactpress/apps/leonorvioleta/build/static/css/main.caddded6.css",
-    "main.js": "/wordpressVioleta/wp-content/reactpress/apps/leonorvioleta/build/static/js/main.66112d91.js",
-    "static/js/787.738314be.chunk.js": "/wordpressVioleta/wp-content/reactpress/apps/leonorvioleta/build/static/js/787.738314be.chunk.js",
-    "index.html": "/wordpressVioleta/wp-content/reactpress/apps/leonorvioleta/build/index.html",
-    "main.caddded6.css.map": "/wordpressVioleta/wp-content/reactpress/apps/leonorvioleta/build/static/css/main.caddded6.css.map",
-    "main.66112d91.js.map": "/wordpressVioleta/wp-content/reactpress/apps/leonorvioleta/build/static/js/main.66112d91.js.map",
-    "787.738314be.chunk.js.map": "/wordpressVioleta/wp-content/reactpress/apps/leonorvioleta/build/static/js/787.738314be.chunk.js.map"
+    "main.css": "/leonorvioleta/static/css/main.caddded6.css",
+    "main.js": "/leonorvioleta/static/js/main.08635638.js",
+    "static/js/787.738314be.chunk.js": "/leonorvioleta/static/js/787.738314be.chunk.js",
+    "index.html": "/leonorvioleta/index.html",
+    "main.caddded6.css.map": "/leonorvioleta/static/css/main.caddded6.css.map",
+    "main.08635638.js.map": "/leonorvioleta/static/js/main.08635638.js.map",
+    "787.738314be.chunk.js.map": "/leonorvioleta/static/js/787.738314be.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.caddded6.css",
-    "static/js/main.66112d91.js"
+    "static/js/main.08635638.js"
   ]
 }
