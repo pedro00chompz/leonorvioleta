@@ -20,7 +20,7 @@ export default function PrintShop(props) {
                 type: "Digital Print",
                 paper: "Paper Munken Pure 240gr",
                 size: "30×40cm",
-                image: "shopImg.png",
+                image: process.env.PUBLIC_URL + "/shopImg.png",
             },
             {
                 title: "30×40 DIGITAL PRINTS",
@@ -28,7 +28,7 @@ export default function PrintShop(props) {
                 type: "Digital Print",
                 paper: "Paper Munken Pure 240gr",
                 size: "30×40cm",
-                image: "shopImg.png",
+                image: process.env.PUBLIC_URL + "/shopImg.png",
             },
             {
                 title: "40×50 DIGITAL PRINTS",
@@ -36,7 +36,7 @@ export default function PrintShop(props) {
                 type: "Digital Print",
                 paper: "Paper Munken Pure 240gr",
                 size: "40×50cm",
-                image: "shopImg_versao02.jpg",
+                image: process.env.PUBLIC_URL + "/shopImg.png",
             }
             // Add more objects as needed
         ]);
@@ -80,7 +80,7 @@ export default function PrintShop(props) {
           <div className="order-2 order-md-1 col-12 col-md-3 borderRight borderRight-sm printShopText largePadding largePadding-md" style={{fontSize:"1rem"}}>
             <PrintInfo printData={printData} />
           </div>
-          <div className="order-1 order-md-2 col-12 col-md-9 largePadding largePadding-md smallPadding-md">
+          <div className="order-1 order-md-2 col-12 col-md-9 largePadding largePadding-md smallPadding-md" style={{paddingBottom:"3.5rem"}}>
             <PrintImage printImage={printData.image} />
           </div>
         </div>

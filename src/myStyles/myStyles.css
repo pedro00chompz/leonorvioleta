@@ -15,6 +15,7 @@
 body {
     font-family: "Helvetica", "Arial", sans-serif;
     cursor: none;
+    color: black;
 }
 
 body.hide-cursor {
@@ -85,7 +86,6 @@ body.hide-cursor {
 
 .shopNowLink {
     color: var(--violeta-black, #000);
-    font-size: 0.875rem;
     line-height: normal;
     text-decoration-line: underline;
     display: flex;

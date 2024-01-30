@@ -46,7 +46,7 @@ export default function About(props){
     return(
         <>
             {/* Small Screens */}
-            <div className="d-sm-block d-md-none" style={{marginTop:"7rem"}}>
+            <div className="d-sm-block d-md-none" style={{marginTop:"7rem", color:"#000"}}>
                 <img
                     src={process.env.PUBLIC_URL + '/aboutProfilePhoto.png'}
                     className="img-fluid"
@@ -122,7 +122,7 @@ export default function About(props){
             </div>
 
             {/* Large Screens */}
-            <div className="d-none d-md-block" style={{marginTop:"3.5rem",overflow:"hidden"}}>
+            <div className="d-none d-md-block" style={{marginTop:"3.5rem",overflow:"hidden", color:"#000"}}>
                 <img
                     src={process.env.PUBLIC_URL + '/aboutProfilePhoto.png'}
                     className="align-self-start"
@@ -199,6 +199,7 @@ export default function About(props){
                         <div
                             style={{
                                 paddingTop:"3rem",
+                                color:"black",
                             }}>
                             You can also find my work at
                         </div>
