@@ -136,7 +136,7 @@ export default function WorkPost(props) {
                     </div>
                     <div className="col-1">
                     </div>
-                    <div className="col-7 text-start" style={{paddingLeft:"1rem",paddingTop:`${navbarHeight}px`}}>
+                    <div className="col-7 text-start forceBottomPadding " style={{paddingLeft:"1rem",paddingTop:`${navbarHeight}px`}}>
                         <Carousel
                             style={{width:"49.5rem"}}
                             interval={null}
