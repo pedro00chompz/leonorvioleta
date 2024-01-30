@@ -17,6 +17,9 @@ export default function WorkPost(props) {
     const [maxHeight, setMaxHeight] = useState(0);
     const [windowHeightInRem, setWindowHeightInRem] = useState(0);
     const [windowValueToUse,setWindowValueToUse] = useState(0);
+    const windowSize = window.innerHeight;
+    const referenceSize = windowSize - 171;
+    const carouselSize = referenceSize - 114;
 
     useEffect(() => {
         const calculateWindowHeightInRem = () => {
@@ -136,15 +139,15 @@ export default function WorkPost(props) {
                     </div>
                     <div className="col-1">
                     </div>
-                    <div className="col-7 text-start forceBottomPadding " style={{paddingLeft:"1rem",paddingTop:`${navbarHeight}px`}}>
+                    <div className="col-7 text-start" style={{paddingTop:"57px"}}>
                         <Carousel
-                            style={{width:"49.5rem"}}
+                            style={{marginRight:"32px"}}
                             interval={null}
                             indicators={false}
                         >
                             {workData.images.map((image, index) => (
                                 <Carousel.Item key={index}>
-                                    <img className="d-block w-100" src={image} alt={`Slide ${index}`} style={{height: `${windowValueToUse - navbarHeightInRem}rem`,width:"49.5rem"}}/>
+                                    <img src={image} alt={`Slide ${index}`} style={{height:`${carouselSize}px`}} className="w-100" />
                                 </Carousel.Item>
                             ))}
                         </Carousel>
