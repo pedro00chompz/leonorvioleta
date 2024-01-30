@@ -21,7 +21,7 @@ export default function About(props) {
       .then((data) => {
         const firstElement = data[0];
         setSection01({
-          text: firstElement.acf.text,
+          textSection01: firstElement.acf.text_section_01,
           email: firstElement.acf.email.replace("http://", ""),
           instagram: firstElement.acf.instagram.url,
         });
@@ -29,6 +29,14 @@ export default function About(props) {
           bio01: firstElement.acf.bio_01,
           bio02: firstElement.acf.bio_02,
           image: firstElement.acf.bio_image.url,
+        });
+        setSection03({
+          textSection03: firstElement.acf.text_section_03,
+          link01: firstElement.acf.link_01,
+          link02: firstElement.acf.link_02,
+          link03: firstElement.acf.link_03,
+          link04: firstElement.acf.link_04,
+          link05: firstElement.acf.link_05,
         });
         setSection04({
           placeholder: firstElement.acf.placeholder,
@@ -98,7 +106,7 @@ export default function About(props) {
             contact
           </div>
           <div style={{ lineHeight: "1.2rem", paddingBottom: "1rem" }}>
-            {section01.text}
+            {section01.textSection01}
           </div>
           <div
             className="text-decoration-underline"
@@ -157,44 +165,21 @@ export default function About(props) {
           }}
           className="text-start"
         >
-          You can also find my work at
-          <div style={{ paddingTop: "1rem" }}>
-            <a
-              className="mb-0 text-decoration-underline d-block text-black"
-              href="#"
-              target="_blank"
-            >
-              Águas Furtadas
-            </a>
-            <a
-              className="mb-0 text-decoration-underline d-block text-black"
-              href="#"
-              target="_blank"
-            >
-              Oficina Mescla
-            </a>
-            <a
-              className="mb-0 text-decoration-underline d-block text-black"
-              href="#"
-              target="_blank"
-            >
-              Lusco Fusco
-            </a>
-            <a
-              className="mb-0 text-decoration-underline d-block text-black"
-              href="#"
-              target="_blank"
-            >
-              Malapata Gallery
-            </a>
-            <a
-              className="mb-0 text-decoration-underline d-block text-black"
-              href="#"
-              target="_blank"
-            >
-              Unwind Studio
-            </a>
+          <div style={{ lineHeight: "1.2rem", paddingBottom: "1rem" }}>
+            {section03.textSection03}
           </div>
+          {["link01", "link02", "link03", "link04", "link05"].map(
+            (link) =>
+              section03[link] && (
+                <div
+                  key={link}
+                  className="text-decoration-underline"
+                  onClick={() => window.open(section03[link].url, "_blank")}
+                >
+                  {section03[link].title}
+                </div>
+              )
+          )}
         </div>
         <div
           style={{
@@ -204,12 +189,7 @@ export default function About(props) {
         >
           <div style={{ lineHeight: "1.2rem" }}>
             {section04.placeholder && section04.placeholder.trim() !== "" && (
-              <div
-                style={{
-                  padding: "1rem",
-                }}
-                className="text-start"
-              >
+              <div className="text-start">
                 <div style={{ lineHeight: "1.2rem" }}>
                   {section04.placeholder.split("\n").map((paragraph, index) => (
                     <p key={index} className="mb-0">
@@ -266,16 +246,16 @@ export default function About(props) {
               contact
             </div>
             <div style={{ lineHeight: "1.2rem", paddingBottom: "1rem" }}>
-              {section01.text}
+              {section01.textSection01}
             </div>
             <div
-              className="text-decoration-underline"
+              className="text-decoration-underline aboutLink"
               onClick={() => window.open(`mailto:${section01.email}`, "_blank")}
             >
               {section01.email}
             </div>
             <div
-              className="text-decoration-underline"
+              className="text-decoration-underline aboutLink"
               onClick={() => window.open(section01.instagram, "_blank")}
             >
               instagram
@@ -327,44 +307,21 @@ export default function About(props) {
                 paddingTop: "3rem",
               }}
             >
-              You can also find my work at
+              {section03.textSection03}
             </div>
             <div style={{ paddingTop: "1rem" }}>
-              <a
-                className="mb-0 text-decoration-underline d-block aboutLink"
-                href="#"
-                target="_blank"
-              >
-                Águas Furtadas
-              </a>
-              <a
-                className="mb-0 text-decoration-underline d-block  aboutLink"
-                href="#"
-                target="_blank"
-              >
-                Oficina Mescla
-              </a>
-              <a
-                className="mb-0 text-decoration-underline d-block  aboutLink"
-                href="#"
-                target="_blank"
-              >
-                Lusco Fusco
-              </a>
-              <a
-                className="mb-0 text-decoration-underline d-block  aboutLink"
-                href="#"
-                target="_blank"
-              >
-                Malapata Gallery
-              </a>
-              <a
-                className="mb-0 text-decoration-underline d-block  aboutLink"
-                href="#"
-                target="_blank"
-              >
-                Unwind Studio
-              </a>
+              {["link01", "link02", "link03", "link04", "link05"].map(
+                (link) =>
+                  section03[link] && (
+                    <div
+                      key={link}
+                      className="text-decoration-underline aboutLink"
+                      onClick={() => window.open(section03[link].url, "_blank")}
+                    >
+                      {section03[link].title}
+                    </div>
+                  )
+              )}
             </div>
           </div>
           <div className="col-1"></div>
