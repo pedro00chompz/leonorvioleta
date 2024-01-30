@@ -1,4 +1,5 @@
 //Home.js
+
 import React, { useState, useEffect } from "react";
 
 export default function Home() {
@@ -7,9 +8,11 @@ export default function Home() {
   const [imageSrc, setImageSrc] = useState("");
   const [marginTop, setMarginTop] = useState(navbarHeight);
   const [padding, setPadding] = useState("2rem");
+  const [viewportHeight, setViewportHeight] = useState(window.innerHeight);
 
   useEffect(() => {
     const handleResize = () => {
+      setViewportHeight(window.innerHeight);
       if (window.innerWidth <= 767.98) {
         setImageSrc(process.env.PUBLIC_URL + "/homeMobile.png");
         setMarginTop(`calc(${navbarHeight} * 2)`);
@@ -29,7 +32,7 @@ export default function Home() {
 
     // Cleanup on unmount
     return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  }, []); // Removed desktopImage and mobileImage from the dependency array
 
   const imageStyle = {
     height: "100%",
@@ -40,7 +43,7 @@ export default function Home() {
   const containerStyle = {
     marginTop: marginTop,
     padding: padding,
-    height: `calc(100vh - ${navbarHeight} - ${footerHeight})`,
+    height: `calc(${viewportHeight}px - ${navbarHeight} - ${footerHeight})`,
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-between',
