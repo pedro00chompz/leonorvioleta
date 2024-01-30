@@ -139,7 +139,7 @@ export default function WorkPost(props) {
                     </div>
                     <div className="col-1">
                     </div>
-                    <div className="col-7 text-start" style={{paddingTop:"57px"}}>
+                    <div className="col-7 text-start" style={{paddingTop:"57px",paddingLeft:"1rem"}}>
                         <Carousel
                             style={{marginRight:"32px"}}
                             interval={null}
