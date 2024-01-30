@@ -1,4 +1,3 @@
-//Home.js
 import React, { useState, useEffect } from "react";
 
 export default function Home() {
@@ -9,6 +8,7 @@ export default function Home() {
   const [padding, setPadding] = useState("2rem");
   const [desktopImage, setDesktopImage] = useState("");
   const [mobileImage, setMobileImage] = useState("");
+  const [viewportHeight, setViewportHeight] = useState(window.innerHeight);
 
   useEffect(() => {
     // Fetch data from the WordPress API
@@ -22,6 +22,7 @@ export default function Home() {
     });
 
     const handleResize = () => {
+      setViewportHeight(window.innerHeight);
       if (window.innerWidth <= 767.98) {
         setImageSrc(mobileImage);
         setMarginTop(`calc(${navbarHeight} * 2)`);
@@ -52,7 +53,7 @@ export default function Home() {
   const containerStyle = {
     marginTop: marginTop,
     padding: padding,
-    height: `calc(100vh - ${navbarHeight} - ${footerHeight})`,
+    height: `calc(${viewportHeight}px - ${navbarHeight} - ${footerHeight})`,
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-between',
