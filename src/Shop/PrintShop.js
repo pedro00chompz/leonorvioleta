@@ -20,7 +20,7 @@ export default function PrintShop(props) {
                 type: "Digital Print",
                 paper: "Paper Munken Pure 240gr",
                 size: "30×40cm",
-                image: "placeholder1.jpg",
+                image: "shopImg.png",
             },
             {
                 title: "30×40 DIGITAL PRINTS",
@@ -28,7 +28,7 @@ export default function PrintShop(props) {
                 type: "Digital Print",
                 paper: "Paper Munken Pure 240gr",
                 size: "30×40cm",
-                image: "placeholder1.jpg",
+                image: "shopImg.png",
             },
             {
                 title: "40×50 DIGITAL PRINTS",
@@ -36,7 +36,7 @@ export default function PrintShop(props) {
                 type: "Digital Print",
                 paper: "Paper Munken Pure 240gr",
                 size: "40×50cm",
-                image: "placeholder2.jpg",
+                image: "shopImg_versao02.jpg",
             }
             // Add more objects as needed
         ]);
