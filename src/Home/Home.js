@@ -9,6 +9,7 @@ export default function Home() {
   const [marginTop, setMarginTop] = useState(navbarHeight);
   const [padding, setPadding] = useState("2rem");
   const [viewportHeight, setViewportHeight] = useState(window.innerHeight);
+  const mobileSize = viewportHeight - 230;
 
   useEffect(() => {
     const handleResize = () => {
@@ -52,7 +53,7 @@ export default function Home() {
   return (
       <>
         <div className="d-sm-block d-md-none d-flex align-items-center" style={containerStyle}>
-          <img src={imageSrc} alt="Home" style={{height:"80%",width:"80%"}}/>
+          <img src={imageSrc} alt="Home" style={{height:`${mobileSize}px`,width:"auto"}}/>
         </div>
        <div className="d-none d-md-block" style={containerStyle}>
           <img src={imageSrc} alt="Home" style={imageStyle} />
