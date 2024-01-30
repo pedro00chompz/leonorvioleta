@@ -4,9 +4,14 @@ export default function SelectedWork(props){
 
     const {navbarHeight} = props;
 
+    const divStyles = {
+        marginTop: '7rem',
+        ...(window.innerWidth >= 768 && { marginBottom: '3rem' })
+    };
+
     return(
         <>
-            <div style={{marginTop:"7rem",marginBottom:"3rem"}}>
+            <div style={divStyles}>
                 <WorkPost navbarHeight={navbarHeight}/>
                 <WorkPost navbarHeight={navbarHeight}/>
                 <WorkPost navbarHeight={navbarHeight}/>
