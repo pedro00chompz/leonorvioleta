@@ -18,8 +18,8 @@ export default function WorkPost(props) {
     const [windowHeightInRem, setWindowHeightInRem] = useState(0);
     const [windowValueToUse,setWindowValueToUse] = useState(0);
     const windowSize = window.innerHeight;
-    const referenceSize = windowSize - 171;
-    const carouselSize = referenceSize - 114;
+    const referenceSize = windowSize - 168;
+    const carouselSize = referenceSize - 112;
 
     useEffect(() => {
         const calculateWindowHeightInRem = () => {
@@ -119,7 +119,7 @@ export default function WorkPost(props) {
             {/* Work posts for Large Screens */}
 
             <div className="d-none d-md-block overflow-x-hidden">
-                <div className="row" style={{height:`${windowValueToUse}rem`,backgroundColor:"white",borderBottom:"0.08rem solid black"}}>
+                <div className="row" style={{height:`${referenceSize}px`,backgroundColor:"white",borderBottom:"0.08rem solid black"}}>
                     <div className="col-4" style={{paddingLeft:"3rem",paddingTop:`${navbarHeight}px`,borderRight:"0.08rem solid black"}}>
                         <div className="text-start text-uppercase" style={{ paddingBottom: "1rem" }}>
                             {workData.title}
@@ -139,7 +139,7 @@ export default function WorkPost(props) {
                     </div>
                     <div className="col-1">
                     </div>
-                    <div className="col-7 text-start" style={{paddingTop:"57px",paddingLeft:"1rem"}}>
+                    <div className="col-7 text-start overflow-x-hidden" style={{paddingTop:"56px", paddingLeft:"1rem", paddingBottom:"56px"}}>
                         <Carousel
                             style={{marginRight:"32px"}}
                             interval={null}

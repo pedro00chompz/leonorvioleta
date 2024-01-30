@@ -5,8 +5,8 @@ export default function SelectedWork(props){
     const {navbarHeight} = props;
 
     const divStyles = {
-        marginTop: '7rem',
-        ...(window.innerWidth >= 768 && { marginBottom: '3rem' })
+        marginTop: '114px',
+        ...(window.innerWidth >= 768 && { marginBottom: "56px" })
     };
 
     return(
