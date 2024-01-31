@@ -19,7 +19,7 @@ export default function WorkPost(props) {
     const [windowValueToUse,setWindowValueToUse] = useState(0);
     const windowSize = window.innerHeight;
     const referenceSize = windowSize - 168;
-    const carouselSize = referenceSize - 112;
+    const carouselSize = referenceSize - 113;
 
     useEffect(() => {
         const calculateWindowHeightInRem = () => {
