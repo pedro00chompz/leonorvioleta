@@ -5,7 +5,7 @@ import Carousel from 'react-bootstrap/Carousel';
 
 export default function WorkPost(props) {
 
-    const {navbarHeight} = props;
+    const {navbarHeight,workData} = props;
 
     const navbarHeightInPixels = navbarHeight * 2;
     const rootFontSize = parseFloat(getComputedStyle(document.documentElement).fontSize);
@@ -42,19 +42,6 @@ export default function WorkPost(props) {
     }, []);
 
     console.log(windowValueToUse);
-
-    const workData = {
-        title: "agenda paralelo",
-        event: "ágora porto",
-        local: "teatro municipal do porto",
-        year: "2020",
-        description: "Paralelo is the schedule of Teatro Municipal do Porto dedicated to schools and families. Graphic design by Studio Eduardo Aires. ",
-        images: [
-            "https://i.ibb.co/3Tdkkmb/template-Img-Violeta.png",
-            "https://i.ibb.co/3Tdkkmb/template-Img-Violeta.png",
-            "https://i.ibb.co/3Tdkkmb/template-Img-Violeta.png"
-        ],
-    }
 
     useEffect(() => {
         if (container.current) {
