@@ -8,18 +8,29 @@ export default function Home() {
   const [imageSrc, setImageSrc] = useState("");
   const [marginTop, setMarginTop] = useState(navbarHeight);
   const [padding, setPadding] = useState("2rem");
+  const [desktopImage, setDesktopImage] = useState("");
+  const [mobileImage, setMobileImage] = useState("");
   const [viewportHeight, setViewportHeight] = useState(window.innerHeight);
   const mobileSize = viewportHeight - 230;
 
   useEffect(() => {
+    // Fetch data from the WordPress API
+    fetch('http://localhost/wordpressVioleta/wp-json/wp/v2/home')
+    .then(response => response.json())
+    .then(data => {
+        const homePost = data[0];
+        setDesktopImage(homePost.acf.desktop_image.url);
+        setMobileImage(homePost.acf.mobile_image.url);
+    });
+
     const handleResize = () => {
       setViewportHeight(window.innerHeight);
       if (window.innerWidth <= 767.98) {
-        setImageSrc(process.env.PUBLIC_URL + "/homeMobile.png");
+        setImageSrc(mobileImage);
         setMarginTop(`calc(${navbarHeight} * 2)`);
         setPadding("1rem");
       } else {
-        setImageSrc(process.env.PUBLIC_URL + "/homeHD.png");
+        setImageSrc(desktopImage);
         setMarginTop(navbarHeight);
         setPadding("2rem");
       }
@@ -33,7 +44,7 @@ export default function Home() {
 
     // Cleanup on unmount
     return () => window.removeEventListener("resize", handleResize);
-  }, []); // Removed desktopImage and mobileImage from the dependency array
+  }, [desktopImage, mobileImage]); // Added desktopImage and mobileImage to the dependency array
 
   const imageStyle = {
     height: "100%",
