@@ -71,7 +71,7 @@ export default function DailyGallery() {
                                 //if desktop, only add border right to the first 3 columns. if mobile add border right to the first column
                                 borderRight: windowWidth > 767.98 ? (colIndex === 3 ? "none" : "0.08rem solid var(--violeta-white, #FFF)") : (colIndex === 1 ? "none" : "1px solid var(--violeta-white, #FFF)"),
                                 //if last row remove border bottom
-                                borderBottom: rowIndex === groupedArray.length - 1 ? "none" : "0.08rem solid var(--violeta-white, #FFF)"
+                                borderBottom: rowIndex === groupedArray.length - 1 && rowIndex !== 0 ? "none" : "0.08rem solid var(--violeta-white, #FFF)"
                             }}
                         >
                             <GalleryImage galleryImage={illustrationData.image}
