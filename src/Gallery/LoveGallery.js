@@ -4,59 +4,26 @@ import GalleryImage from "./galleryComponents/GalleryImage";
 export default function LoveGallery() {
 
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+    const [loveDataArray, setLoveDataArray] = useState([]);
 
-    const IllustrationDataArray = [
-        {
-            lineOne: "Cake design",
-            lineTwo: "Collab with",
-            lineThree: "A Bia Bolos",
-            year: "2023",
-            image: "galleryImg1.jpg",
-        },
-        {
-            lineOne: "Sit",
-            lineTwo: "Amet",
-            lineThree: "Consectetur",
-            year: "2001",
-            image: "galleryImg2.jpg",
-        },
-        {
-            lineOne: "Adipiscing",
-            lineTwo: "Elit",
-            lineThree: "Sed",
-            year: "2002",
-            image: "galleryImg3.jpg",
-        },
-        {
-            lineOne: "Eiusmod",
-            lineTwo: "Tempor",
-            lineThree: "Incididunt",
-            year: "2003",
-            image: "galleryImg4.jpg",
-        },
-        {
-            lineOne: "Labore",
-            lineTwo: "Dolore",
-            lineThree: "Magna",
-            year: "2004",
-            image: "galleryImg4.jpg",
-        },
-        {
-            lineOne: "Exercitation",
-            lineTwo: "Minim",
-            lineThree: "Veniam",
-            year: "2005",
-            image: "galleryImg4.jpg",
-        },
-        {
-            lineOne: "Cupidatat",
-            lineTwo: "Proident",
-            lineThree: "Deserunt",
-            year: "2021",
-            image: "galleryImg3.jpg",
-        },
-    ];
-
+    useEffect(() => {
+        fetch('http://localhost/wordpressVioleta/wp-json/wp/v2/gallery')
+            .then(response => response.json())
+            .then(data => {
+                const loveDataArray = data
+                    .filter(gallery => gallery.acf.display_in_sections.includes('love'))
+                    .map(gallery => ({
+                        lineOne: gallery.acf.line_one,
+                        lineTwo: gallery.acf.line_two,
+                        lineThree: gallery.acf.line_three,
+                        year: gallery.acf.year,
+                        image: gallery.acf && gallery.acf.gallery_image ? gallery.acf.gallery_image.url : null,
+                        index: gallery.acf.index,
+                    }))
+                    .sort((a, b) => a.index - b.index); // Sort by index
+                setLoveDataArray(loveDataArray);
+            });
+    }, []);
 
     //change body colour to black on mount and get window width
     useEffect(() => {
@@ -79,17 +46,15 @@ export default function LoveGallery() {
 
     if(windowWidth > 767.98) {
         //if desktop group the data into groups of 4
-        for (let i = 0; i < IllustrationDataArray.length; i += 4) {
-            groupedArray.push(IllustrationDataArray.slice(i, i + 4));
+        for (let i = 0; i < loveDataArray.length; i += 4) {
+            groupedArray.push(loveDataArray.slice(i, i + 4));
         }
     } else {
         //if mobile group the data into groups of 2
-        for (let i = 0; i < IllustrationDataArray.length; i += 2) {
-            groupedArray.push(IllustrationDataArray.slice(i, i + 2));
+        for (let i = 0; i < loveDataArray.length; i += 2) {
+            groupedArray.push(loveDataArray.slice(i, i + 2));
         }
     }
-
-    console.log(groupedArray.length);
 
     return (
         <div className="container-fluid printShopContainer">
