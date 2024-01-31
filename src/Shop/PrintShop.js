@@ -1,4 +1,4 @@
-// PrintShop.js
+//PrintShop.js
 
 import React, { useState, useEffect } from "react";
 import PrintInfo from "./printComponents/PrintInfo";
