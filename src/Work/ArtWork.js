@@ -1,8 +1,20 @@
-export default function ArtWork(){
+import WorkPost from "./WorkPost";
+
+export default function ArtWork(props){
+
+    const {navbarHeight} = props;
+
+    const divStyles = {
+        marginTop: '114px',
+        ...(window.innerWidth >= 768 && { marginBottom: "56px" })
+    };
+
     return(
         <>
-            <div style={{marginTop:"10rem"}}>
-                this is art work
+            <div style={divStyles}>
+                <WorkPost navbarHeight={navbarHeight}/>
+                <WorkPost navbarHeight={navbarHeight}/>
+                <WorkPost navbarHeight={navbarHeight}/>
             </div>
         </>
     )

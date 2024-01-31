@@ -1,8 +1,19 @@
-export default function EditorialWork(){
+import WorkPost from "./WorkPost";
+
+export default function EditorialWork(props){
+    const {navbarHeight} = props;
+
+    const divStyles = {
+        marginTop: '114px',
+        ...(window.innerWidth >= 768 && { marginBottom: "56px" })
+    };
+
     return(
         <>
-            <div style={{marginTop:"10rem"}}>
-                this is editorial work
+            <div style={divStyles}>
+                <WorkPost navbarHeight={navbarHeight}/>
+                <WorkPost navbarHeight={navbarHeight}/>
+                <WorkPost navbarHeight={navbarHeight}/>
             </div>
         </>
     )
