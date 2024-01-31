@@ -115,6 +115,7 @@ export default function Index() {
                 <FooterSmallScreens
                     footerColor={footerColor}
                     isHome={currentComponent === "Home"}
+                    isWork={currentComponent === "SelectedWork" || currentComponent === "CollabsWork" || currentComponent === "MuralWork" || currentComponent === "ArtWork" || currentComponent === "EditorialWork"}
                 />
             </div>
             <div className="d-none d-md-block">

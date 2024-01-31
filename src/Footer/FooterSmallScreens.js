@@ -1,7 +1,7 @@
 //FooterSmallScreen.js
 import React from 'react';
 
-export default function FooterSmallScreens({footerColor, isHome}) {
+export default function FooterSmallScreens({footerColor, isHome,isWork}) {
     const handleEmailClick = () => {
         window.open('mailto:aleonorvioleta@gmail.com', '_blank');
     };
@@ -18,7 +18,7 @@ export default function FooterSmallScreens({footerColor, isHome}) {
     const normalColors = {
         backgroundColor: "var(--violeta-white, #fff)",
         padding: "1rem",
-        borderTop: isHome ? 'none' : "0.08rem solid var(--violeta-black, #101010)",
+        borderTop: isHome || isWork ? 'none' : "0.08rem solid var(--violeta-black, #101010)",
         position: isHome ? 'fixed' : 'relative',
         bottom: isHome ? '0' : 'auto',
         width: isHome ? '100%' : 'auto',

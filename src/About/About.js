@@ -128,6 +128,7 @@ export default function About(props){
                     className="align-self-start"
                     alt="Leonor Violeta Profile Photo"
                     style={{ paddingRight: "2rem",height:"22rem",width:"auto",zIndex:"1000",position:"fixed",top:`${imgPaddingTop}px`,right:"0.5em" }}
+                    loading="lazy"
                 />
                 <div className="row text-start"
                      style={{

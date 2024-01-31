@@ -110,7 +110,7 @@ export default function WorkPost(props) {
                     <Carousel interval={null} indicators={false} style={{paddingTop:"1rem"}}>
                         {workData.images.map((image, index) => (
                             <Carousel.Item key={index}>
-                                <img className="d-block w-100" src={image} alt={`Slide ${index}`}/>
+                                <img className="d-block w-100" src={image} alt={`Slide ${index}`} loading="lazy"/>
                             </Carousel.Item>
                         ))}
                     </Carousel>                </div>
