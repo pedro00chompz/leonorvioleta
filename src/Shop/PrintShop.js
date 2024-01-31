@@ -1,4 +1,4 @@
-// PrintShop.js
+//PrintShop.js
 
 import React, { useState, useEffect } from "react";
 import PrintInfo from "./printComponents/PrintInfo";
@@ -11,36 +11,24 @@ export default function PrintShop(props) {
   const [printDataArray, setPrintDataArray] = useState([]);
   const [productHeight, setProductHeight] = useState('auto');
 
-    useEffect(() => {
-        // Fetch data from the WordPress REST API
-        setPrintDataArray([
-            {
-                title: "30×40 DIGITAL PRINTS",
-                price: "23€",
-                type: "Digital Print",
-                paper: "Paper Munken Pure 240gr",
-                size: "30×40cm",
-                image: process.env.PUBLIC_URL + "/shopImg.png",
-            },
-            {
-                title: "30×40 DIGITAL PRINTS",
-                price: "23€",
-                type: "Digital Print",
-                paper: "Paper Munken Pure 240gr",
-                size: "30×40cm",
-                image: process.env.PUBLIC_URL + "/shopImg.png",
-            },
-            {
-                title: "40×50 DIGITAL PRINTS",
-                price: "30€",
-                type: "Digital Print",
-                paper: "Paper Munken Pure 240gr",
-                size: "40×50cm",
-                image: process.env.PUBLIC_URL + "/shopImg.png",
-            }
-            // Add more objects as needed
-        ]);
-    }, []);
+  useEffect(() => {
+    fetch('http://localhost/wordpressVioleta/wp-json/wp/v2/product')
+      .then(response => response.json())
+      .then(data => {
+        const printDataArray = data
+          .filter(product => product.acf.display_in_sections.includes('print'))
+          .map(product => ({
+            title: product.acf.title,
+            price: product.acf.price,
+            type: product.acf.type,
+            material: product.acf.material,
+            size: product.acf.size,
+            image: product.acf && product.acf.print_image ? product.acf.print_image.url : null,
+            shop: product.acf.shop,
+          }));
+        setPrintDataArray(printDataArray);
+      });
+  }, []);
 
   useEffect(() => {
     const calculateProductHeight = () => {
