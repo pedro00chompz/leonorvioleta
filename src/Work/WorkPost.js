@@ -7,6 +7,10 @@ export default function WorkPost(props) {
 
     const {navbarHeight,workData} = props;
 
+    const shouldShowCarouselControls = workData.images.length > 1;
+
+    console.log("mostrar controladores",shouldShowCarouselControls)
+
     const navbarHeightInPixels = navbarHeight * 2;
     const rootFontSize = parseFloat(getComputedStyle(document.documentElement).fontSize);
     const navbarHeightInRem = navbarHeightInPixels / rootFontSize;
@@ -94,7 +98,7 @@ export default function WorkPost(props) {
                     >
                         {workData.description}
                     </div>
-                    <Carousel interval={null} indicators={false} style={{paddingTop:"1rem"}}>
+                    <Carousel interval={null} indicators={false} controls={shouldShowCarouselControls} style={{paddingTop:"1rem"}}>
                         {workData.images.map((image, index) => (
                             <Carousel.Item key={index}>
                                 <img className="d-block w-100" src={image} alt={`Slide ${index}`} loading="lazy"/>
@@ -131,6 +135,7 @@ export default function WorkPost(props) {
                             style={{marginRight:"32px"}}
                             interval={null}
                             indicators={false}
+                            controls={shouldShowCarouselControls}
                         >
                             {workData.images.map((image, index) => (
                                 <Carousel.Item key={index}>
