@@ -256,7 +256,7 @@ export default function NavBarLargeScreen(props) {
                                             setArtSelected(true);
                                         }}
                                     >
-                                        art
+                                        all
                                     </div>
                                 </div>
                             </div>

@@ -187,7 +187,7 @@ export default function NavBarSmallScreen(props) {
                             setActiveShop(false);
                         }}
                     >
-                        art
+                        all
                     </div>
                 </>
             )}

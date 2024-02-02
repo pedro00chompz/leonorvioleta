@@ -19,7 +19,7 @@ export default function ArtWork(props){
             .then((response) => response.json())
             .then((data) => {
                 const workDataArray = data
-                    .filter((work) => work.acf.display_in_sections.includes("art"))
+                    .filter(work => ["selected","collabs","mural","editorial"].some(section => work.acf.display_in_sections.includes(section)))
                     .map((work) => ({
                         title: work.acf.title,
                         event: work.acf.event,
