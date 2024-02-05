@@ -37,6 +37,11 @@ export default function About(props) {
           link03: firstElement.acf.link_03,
           link04: firstElement.acf.link_04,
           link05: firstElement.acf.link_05,
+          link06: firstElement.acf.link_06,
+          link07: firstElement.acf.link_07,
+          link08: firstElement.acf.link_08,
+          link09: firstElement.acf.link_09,
+          link10: firstElement.acf.link_10,
         });
         setSection04({
           placeholder: firstElement.acf.placeholder,
@@ -161,7 +166,7 @@ export default function About(props) {
           <div style={{ lineHeight: "1.2rem", paddingBottom: "1rem" }}>
             {section03.textSection03}
           </div>
-          {["link01", "link02", "link03", "link04", "link05"].map(
+          {["link01", "link02", "link03", "link04", "link05", "link06", "link07", "link08", "link09", "link10"].map(
             (link) =>
               section03[link] && (
                 <div
@@ -314,7 +319,7 @@ export default function About(props) {
               {section03.textSection03}
             </div>
             <div style={{ paddingTop: "1rem" }}>
-              {["link01", "link02", "link03", "link04", "link05"].map(
+              {["link01", "link02", "link03", "link04", "link05", "link06", "link07", "link08", "link09", "link10"].map(
                 (link) =>
                   section03[link] && (
                     <div
