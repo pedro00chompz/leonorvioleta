@@ -8,7 +8,7 @@ export default function IllustrationGallery() {
   const [illustrationDataArray, setIllustrationDataArray] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost/wordpressVioleta/wp-json/wp/v2/gallery')
+        fetch('https://leonorvioleta.com/wp-json/wp/v2/gallery')
             .then(response => response.json())
             .then(data => {
                 const illustrationDataArray = data

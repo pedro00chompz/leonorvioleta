@@ -12,7 +12,7 @@ export default function PrintShop(props) {
   const [productHeight, setProductHeight] = useState('auto');
 
   useEffect(() => {
-    fetch('http://localhost/wordpressVioleta/wp-json/wp/v2/product')
+    fetch('https://leonorvioleta.com/wp-json/wp/v2/product')
       .then(response => response.json())
       .then(data => {
         const printDataArray = data

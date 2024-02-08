@@ -7,7 +7,7 @@ export default function LoveGallery() {
     const [loveDataArray, setLoveDataArray] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost/wordpressVioleta/wp-json/wp/v2/gallery')
+        fetch('https://leonorvioleta.com/wp-json/wp/v2/gallery')
             .then(response => response.json())
             .then(data => {
                 const loveDataArray = data

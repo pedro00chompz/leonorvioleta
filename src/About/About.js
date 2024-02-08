@@ -16,7 +16,7 @@ export default function About(props) {
   const [section04, setSection04] = useState({});
 
   useEffect(() => {
-    fetch("http://localhost/wordpressVioleta/wp-json/wp/v2/about")
+    fetch("https://leonorvioleta.com/wp-json/wp/v2/about")
       .then((response) => response.json())
       .then((data) => {
         const firstElement = data[0];

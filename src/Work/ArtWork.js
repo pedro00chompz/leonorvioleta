@@ -15,7 +15,7 @@ export default function ArtWork(props){
 
     useEffect(() => {
         // Fetch data from the WordPress API
-        fetch("http://localhost/wordpressVioleta/wp-json/wp/v2/work")
+        fetch("https://leonorvioleta.com/wp-json/wp/v2/work")
             .then((response) => response.json())
             .then((data) => {
                 const workDataArray = data
