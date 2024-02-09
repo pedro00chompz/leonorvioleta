@@ -1,7 +1,7 @@
 import WorkPost from "./WorkPost";
 import {useEffect, useState} from "react";
 
-export default function ArtWork(props){
+export default function ArtWork(props) {
 
     const {navbarHeight} = props;
 
@@ -10,16 +10,19 @@ export default function ArtWork(props){
 
     const divStyles = {
         marginTop: '114px',
-        ...(window.innerWidth >= 768 && { marginBottom: "56px" })
+        ...(window.innerWidth >= 768 && {marginBottom: "56px"})
     };
 
     useEffect(() => {
-        // Fetch data from the WordPress API
-        fetch("http://localhost/wordpressVioleta/wp-json/wp/v2/work")
-            .then((response) => response.json())
-            .then((data) => {
-                const workDataArray = data
-                    .filter(work => ["selected","collabs","mural","editorial"].some(section => work.acf.display_in_sections.includes(section)))
+        Promise.all([
+            // Fetch data from the WordPress API
+            fetch("https://leonorvioleta.com/wp-json/wp/v2/work?per_page=100&page=1")
+                .then((response) => response.json()),
+            fetch("https://leonorvioleta.com/wp-json/wp/v2/work?per_page=100&page=2").then((response) => response.json())])
+            .then(([page1Data, page2Data]) => {
+                const mergedData = [...page1Data, ...(page2Data.length > 0 ? page2Data : [])];
+                const workDataArray = mergedData
+                    .filter(work => ["selected", "collabs", "mural", "editorial"].some(section => work.acf.display_in_sections.includes(section)))
                     .map((work) => ({
                         title: work.acf.title,
                         event: work.acf.event,
@@ -41,9 +44,9 @@ export default function ArtWork(props){
                     }));
                 setWorkDataArray(workDataArray);
             });
-    },[]);
+    }, []);
 
-    return(
+    return (
         <>
             <div style={divStyles}>
                 {workDataArray.map((workData, index) => (

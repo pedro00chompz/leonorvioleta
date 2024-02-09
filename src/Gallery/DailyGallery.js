@@ -9,22 +9,32 @@ export default function DailyGallery() {
     const [dailyDataArray, setDailyDataArray] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost/wordpressVioleta/wp-json/wp/v2/gallery')
-            .then(response => response.json())
-            .then(data => {
-                const dailyDataArray = data
-                    .filter(gallery => gallery.acf.display_in_sections.includes('daily'))
-                    .map(gallery => ({
-                        lineOne: gallery.acf.line_one,
-                        lineTwo: gallery.acf.line_two,
-                        lineThree: gallery.acf.line_three,
-                        year: gallery.acf.year,
-                        image: gallery.acf && gallery.acf.gallery_image ? gallery.acf.gallery_image.url : null,
-                        index: gallery.acf.index,
-                    }))
-                    .sort((a, b) => a.index - b.index); // Sort by index
-                setDailyDataArray(dailyDataArray);
-            });
+        // Fetch data from both pages concurrently
+        Promise.all([
+            fetch('https://leonorvioleta.com/wp-json/wp/v2/gallery?per_page=100&page=1').then(response => response.json()),
+            fetch('https://leonorvioleta.com/wp-json/wp/v2/gallery?per_page=100&page=2').then(response => response.json())
+        ]).then(([page1Data, page2Data]) => {
+            // Merge data from both pages into a single array
+            const mergedData = [...page1Data, ...(page2Data.length > 0 ? page2Data : [])];
+            console.log(mergedData);
+
+            // Filter and map through the merged array
+            const filteredData = mergedData
+                .filter(gallery => gallery.acf.display_in_sections.includes('daily'))
+                .map(gallery => ({
+                    lineOne: gallery.acf.line_one,
+                    lineTwo: gallery.acf.line_two,
+                    lineThree: gallery.acf.line_three,
+                    year: gallery.acf.year,
+                    image: gallery.acf && gallery.acf.gallery_image ? gallery.acf.gallery_image.url : null,
+                    index: gallery.acf.index,
+                }))
+                .sort((a, b) => a.index - b.index); // Sort by index
+
+            setDailyDataArray(filteredData);
+        }).catch(error => {
+            console.error('Error fetching data:', error);
+        });
     }, []);
 
 

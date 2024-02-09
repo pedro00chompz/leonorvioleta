@@ -11,24 +11,28 @@ export default function PrintShop(props) {
   const [printDataArray, setPrintDataArray] = useState([]);
   const [productHeight, setProductHeight] = useState('auto');
 
-  useEffect(() => {
-    fetch('http://localhost/wordpressVioleta/wp-json/wp/v2/product')
-      .then(response => response.json())
-      .then(data => {
-        const printDataArray = data
-          .filter(product => product.acf.display_in_sections.includes('print'))
-          .map(product => ({
-            title: product.acf.title,
-            price: product.acf.price,
-            type: product.acf.type,
-            material: product.acf.material,
-            size: product.acf.size,
-            image: product.acf && product.acf.print_image ? product.acf.print_image.url : null,
-            shop: product.acf.shop,
-          }));
-        setPrintDataArray(printDataArray);
-      });
-  }, []);
+    useEffect(() => {
+        Promise.all([
+            fetch('https://leonorvioleta.com/wp-json/wp/v2/product?per_page=100&page=1')
+                .then(response => response.json()),
+            fetch('https://leonorvioleta.com/wp-json/wp/v2/product?per_page=100&page=2')
+                .then((response) => response.json())]).then(([page1Data, page2Data]) => {
+            // Merge data from both pages into a single array
+            const mergedData = [...page1Data, ...(page2Data.length > 0 ? page2Data : [])];
+            const printDataArray = mergedData
+                .filter(product => product.acf.display_in_sections.includes('print'))
+                .map(product => ({
+                    title: product.acf.title,
+                    price: product.acf.price,
+                    type: product.acf.type,
+                    material: product.acf.material,
+                    size: product.acf.size,
+                    image: product.acf && product.acf.print_image ? product.acf.print_image.url : null,
+                    shop: product.acf.shop,
+                }));
+            setPrintDataArray(printDataArray);
+        });
+    }, []);
 
   useEffect(() => {
     const calculateProductHeight = () => {

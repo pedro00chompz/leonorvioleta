@@ -12,10 +12,14 @@ export default function PrintShop(props) {
   const [productHeight, setProductHeight] = useState('auto');
 
   useEffect(() => {
-    fetch('http://localhost/wordpressVioleta/wp-json/wp/v2/product')
-      .then(response => response.json())
-      .then(data => {
-        const printDataArray = data
+    Promise.all([
+    fetch('https://leonorvioleta.com/wp-json/wp/v2/product?per_page=100&page=1')
+      .then(response => response.json()),
+      fetch('https://leonorvioleta.com/wp-json/wp/v2/product?per_page=100&page=2')
+        .then((response) => response.json())]).then(([page1Data, page2Data]) => {
+        // Merge data from both pages into a single array
+        const mergedData = [...page1Data, ...(page2Data.length > 0 ? page2Data : [])];
+        const printDataArray = mergedData
           .filter(product => ['print', 'collabs', 'canvas'].some(section => product.acf.display_in_sections.includes(section)))
           .map(product => ({
             title: product.acf.title,
