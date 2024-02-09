@@ -1,7 +1,7 @@
 import WorkPost from "./WorkPost";
 import {useEffect, useState} from "react";
 
-export default function EditorialWork(props){
+export default function EditorialWork(props) {
     const {navbarHeight} = props;
 
     // Define a state variable to hold the fetched data
@@ -9,11 +9,12 @@ export default function EditorialWork(props){
 
     const divStyles = {
         marginTop: '114px',
-        ...(window.innerWidth >= 768 && { marginBottom: "56px" })
+        ...(window.innerWidth >= 768 && {marginBottom: "56px"})
     };
 
     useEffect(() => {
         // Fetch data from the WordPress API
+
         Promise.all([
             fetch("https://leonorvioleta.com/wp-json/wp/v2/work?per_page=100&page=1")
                 .then((response) => response.json()),
@@ -44,9 +45,9 @@ export default function EditorialWork(props){
                 }));
             setWorkDataArray(workDataArray);
         });
-    },[]);
+    }, []);
 
-    return(
+    return (
         <>
             <div style={divStyles}>
                 {workDataArray.map((workData, index) => (

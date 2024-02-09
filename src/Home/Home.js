@@ -15,7 +15,7 @@ export default function Home() {
 
   useEffect(() => {
     // Fetch data from the WordPress API
-    fetch('http://localhost/wordpressVioleta/wp-json/wp/v2/home')
+    fetch('https://leonorvioleta.com/wp-json/wp/v2/home')
     .then(response => response.json())
     .then(data => {
         const homePost = data[0];

@@ -14,6 +14,7 @@ export default function CollabsWork(props){
 
     useEffect(() => {
         // Fetch data from the WordPress API
+
         Promise.all([
             fetch("https://leonorvioleta.com/wp-json/wp/v2/work?per_page=100&page=1")
                 .then((response) => response.json()),

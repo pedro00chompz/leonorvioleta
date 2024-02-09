@@ -16,7 +16,6 @@ export default function IllustrationGallery() {
             // Merge data from both pages into a single array
             const mergedData = [...page1Data, ...(page2Data.length > 0 ? page2Data : [])];
             console.log(mergedData);
-
             // Filter and map through the merged array
             const filteredData = mergedData
                 .filter(gallery => gallery.acf.display_in_sections.includes('illustration'))
