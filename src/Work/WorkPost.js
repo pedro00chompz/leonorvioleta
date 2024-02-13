@@ -130,7 +130,7 @@ export default function WorkPost(props) {
                 >
                   <img
                     src={image}
-                    alt={`Slide ${index}`}
+                    alt={``}
                     style={{
                       position: "absolute",
                       top: 0,
@@ -211,7 +211,7 @@ export default function WorkPost(props) {
                     <img 
                         className={initialWindowHeight !== window.innerHeight || initialWindowWidth !== window.innerWidth ? "img-fluid" : "w-100"} 
                         src={image} 
-                        alt={`Slide ${index}`} 
+                        alt={``} 
                         style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }} 
                         loading="lazy"
                     />

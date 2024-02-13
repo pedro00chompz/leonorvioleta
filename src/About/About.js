@@ -100,7 +100,7 @@ export default function About(props) {
             padding: "1rem",
             borderBottom: "0.08rem solid black",
           }}
-          alt="Leonor Violeta Profile Photo"
+          alt=""
         />
         <div
           style={{
@@ -220,7 +220,7 @@ export default function About(props) {
         <img
           src={section02.image}
           className="align-self-start"
-          alt="Leonor Violeta Profile Photo"
+          alt=""
           style={{
             paddingRight: "2rem",
             height: "22rem",

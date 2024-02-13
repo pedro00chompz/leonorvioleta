@@ -64,10 +64,10 @@ export default function Home() {
   return (
       <>
         <div className="d-sm-block d-md-none d-flex align-items-center" style={containerStyle}>
-          <img src={imageSrc} alt="Home" style={{height:`${mobileSize}px`,width:"auto"}}/>
+          <img src={imageSrc} alt="" style={{height:`${mobileSize}px`,width:"auto"}}/>
         </div>
        <div className="d-none d-md-block" style={containerStyle}>
-          <img src={imageSrc} alt="Home" style={imageStyle} />
+          <img src={imageSrc} alt="" style={imageStyle} />
        </div>
       </>
   );
