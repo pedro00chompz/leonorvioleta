@@ -8,7 +8,7 @@ import ShopDraft from "./Drafts/ShopDraft";
 function App() {
   return (
     <div className="App">
-      <BrowserRouter basename="wordpressVioleta">
+      <BrowserRouter basename="/">
           <Routes>
               <Route path="/" element={<Index/>}/>
               <Route path="/workdraft247fhgihq87f2" element={<WorkDraft/>}/>
