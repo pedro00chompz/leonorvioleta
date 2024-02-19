@@ -112,8 +112,8 @@ export default function WorkPost(props) {
             {/* Work posts for Large Screens */}
 
             <div className="d-none d-md-block overflow-x-hidden">
-                <div className="row" style={{height:`${referenceSize}px`,backgroundColor:"white",borderBottom:"0.08rem solid black"}}>
-                    <div className="col-4" style={{paddingLeft:"3rem",paddingTop:`${navbarHeight}px`,borderRight:"0.08rem solid black"}}>
+                <div className="row" style={{backgroundColor:"white",borderBottom:"0.08rem solid black"}}>
+                    <div className="col-4" style={{paddingLeft:"3rem",paddingTop:`${navbarHeight}px`,borderRight:"0.08rem solid black", paddingBottom:"56px"}}>
                         <div className="text-start text-uppercase" style={{ paddingBottom: "1rem" }}>
                             {workData.title}
                         </div>
@@ -141,7 +141,14 @@ export default function WorkPost(props) {
                         >
                             {workData.images.map((image, index) => (
                                 <Carousel.Item key={index}>
-                                    <img src={image} alt={`Slide ${index}`} style={{height:carouselSize, width:"auto", objectFit:"cover"}} className={initialWindowHeight !== window.innerHeight || initialWindowWidth !== window.innerWidth ? "img-fluid" : "w-100"} loading="lazy" />
+                                    <img src={image}
+                                         alt={`Slide ${index}`}
+                                         style={{
+                                             maxHeight: `${carouselSize}px`,
+                                             maxWidth: "auto",
+                                         }}
+                                         className={initialWindowHeight !== window.innerHeight || initialWindowWidth !== window.innerWidth ? "img-fluid" : "w-100"}
+                                         loading="lazy" />
                                 </Carousel.Item>
                             ))}
                         </Carousel>
